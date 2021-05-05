@@ -23,6 +23,10 @@ def binary_to_decimal( binary_string ):
     
 
 def print_quantum_circuit():
+    """
+    Prints the quantum circuit that simulates the coin toss
+    """
+
     q = QuantumRegister(1)
     c = ClassicalRegister(1)
 
@@ -78,13 +82,6 @@ def rand_n_digit_binary( n ):
     binary = ""
     for i in range( n ):
         coin_toss = random_coin_toss()
-
-        # AFTER ADDING THIS, We get only 8 or 9, this messes up the coin toss
-        # The most significant digit must not be 0
-        if i == 0:
-            while coin_toss == 0:
-                coin_toss = random_coin_toss()
-
         binary += str( coin_toss )
 
     return binary
@@ -127,7 +124,13 @@ def rand_n_digit( n ):
 
     random_number = ""
     for i in range( n ):
-        random_number += str( rand_digit() )
+        randomDigit = rand_digit()
+
+        if i == 0:
+            while randomDigit == 0:
+                randomDigit = rand_digit()
+
+        random_number += str( randomDigit )
 
     return random_number
 
