@@ -43,6 +43,11 @@ def random_coin_toss():
     This function simulates a perfectly random coin toss (when run on a quantum processor)
     Returns either 0 or 1 with exactly 50% probability of either event occuring
     """
+
+    # There is some sort of bias, which forces future iterations to have some correlation with the first 
+    # function call
+
+
     q = QuantumRegister(1)
     c = ClassicalRegister(1)
 
@@ -72,7 +77,15 @@ def rand_n_digit_binary( n ):
 
     binary = ""
     for i in range( n ):
-        binary += str( random_coin_toss() )
+        coin_toss = random_coin_toss()
+
+        # AFTER ADDING THIS, We get only 8 or 9, this messes up the coin toss
+        # The most significant digit must not be 0
+        if i == 0:
+            while coin_toss == 0:
+                coin_toss = random_coin_toss()
+
+        binary += str( coin_toss )
 
     return binary
 
@@ -143,12 +156,8 @@ def rand_float( a,b, precision = 5 ):
     # Make sure that both ranges are integers
     a = int(a)
     b = int(b)
-
-    beforeDecimal = rand_int( a,b, precision )
-    random_float = beforeDecimal
-    afterDecimalPoint = rand( precision )
-    random_float += afterDecimalPoint
-    print( "DINGO: ", beforeDecimal,  afterDecimalPoint)
+    
+    random_float = rand_int( a,b, precision ) +  rand( precision )
 
     # There is a chance that rand_int can return b. This condition retains the original range
     if ( random_float > b ):
@@ -161,28 +170,28 @@ def rand_float( a,b, precision = 5 ):
 Main
 """
 
-print( "Quantum Circuit:" )
-print_quantum_circuit()
+# print( "Quantum Circuit:" )
+# print_quantum_circuit()
 
-r = random_coin_toss()
-print( "Random Coin Toss: ", r )
-print()
+# r = random_coin_toss()
+# print( "Random Coin Toss: ", r )
+# print()
 
 
-n = int(input("Enter Length of Binary Number: " ) )
-rb = rand_n_digit_binary( n )
-print( "Random n Digit Binary Number: ", rb)
-print()
+# n = int(input("Enter Length of Binary Number: " ) )
+# rb = rand_n_digit_binary( n )
+# print( "Random n Digit Binary Number: ", rb)
+# print()
 
-bn = input( "Enter Binary Number: " )
-print( "Decimal Equivalent: ", binary_to_decimal(bn) )
-print()
+# bn = input( "Enter Binary Number: " )
+# print( "Decimal Equivalent: ", binary_to_decimal(bn) )
+# print()
 
 n = int( input( "Enter value of n: " ) )
 print( "N Digit Decimal Number: ", rand_n_digit( n ) )
 print()
 
-print( "Random Number between 0 and 1: ", rand(5) )
+print( "Random Number between 0 and 1: ", rand(n) )
 print()
 
 print( "Enter value for a: " )
@@ -192,7 +201,7 @@ b = int(input())
 ans1 = rand_int(a,b)
 ans2 = rand_float(a,b, 10)
 print( "Random Integer between %d and %d: %d" %(a,b,ans1) )
-print( "Random Float between %d and %d: %d" %(a,b,ans2) )
+print( "Random Float between %d and %d: %f" %(a,b,ans2) )
 
 
 """
