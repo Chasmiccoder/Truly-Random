@@ -209,6 +209,7 @@ print( "Random Float between %d and %d: %f" %(a,b,ans2) )
 
 """
 Push all this to the project readme
+Make note of all the requirements and project components (For example python version, flask version, etc)
 
 Resources
 https://qiskit.org/documentation/index.html

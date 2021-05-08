@@ -1,7 +1,7 @@
 /* Use the cool network image somewhere */
 
 body {
-    background-image: url( ./images/fractal_bg3.jpg );
+    background-image: url( ./images/fractal_bg.jpg );
 }
 
 #home_icon {
@@ -47,6 +47,24 @@ ion-icon {
 }
 
 #description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-shadow: 1px 1px #000000;
+    margin: 5rem;     
+
+    padding: 4rem;
+    padding-top: 0;
+    padding-bottom: 0;  
+
+    /* background-color: rgba(121,115,92); */
+
+    background: rgb(121,115,92);
+    background: linear-gradient(90deg, rgba(121,115,92,1) 50%, rgba(0,0,0,1) 115%);
+
+
     color: beige;
     font-size: 1.5em;
 
@@ -55,4 +73,50 @@ ion-icon {
     border-style:groove;
     border-color: goldenrod;
     border-color:khaki;
+}
+
+
+.funtion_selection {
+    position: relative;
+    display: inline-block;
+    margin-left: 5rem;
+}
+
+.dropdown {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.funtion_selection:hover .dropdown-content {
+    display: block;
+}
+
+.funtion_selection:hover .dropdown {
+    background-color: #3e8e41;
 }
