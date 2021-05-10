@@ -5,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./index.css">
-    <link rel="shortcut icon" type="image/jpg" href="../images/favicon_ieee_cs.jpg">
+    <!-- CSS Stylesheet -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/main.css') }}">
+
+
+    <!-- Custom Atom Favicon  -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> <!-- Home Button Icon -->
 
     <title>Truly Random</title>
 
 </head>
-<body>
+<body background="{{ url_for('static', filename='fractal_bg.jpg') }}">
 
     <a href="https://thekolheproject.netlify.app/">
         <ion-icon name="home-outline" id="home_icon">Home</ion-icon>
