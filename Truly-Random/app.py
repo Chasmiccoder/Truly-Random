@@ -1,3 +1,4 @@
+# NOTE: If the server is not updating, refresh - ctrl + shift + r
 from flask import Flask, render_template, url_for, redirect, request
 
 
@@ -18,7 +19,7 @@ def login():
     else:
         return render_template('login.html')
 
-    return render_template('login.html')
+    # return render_template('login.html')
 
 @app.route('/<usr>')
 def user( usr ):
