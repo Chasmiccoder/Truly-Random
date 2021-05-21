@@ -25,6 +25,179 @@ ion-icon {
     top: 1rem;
 }
 
+#navbar {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: montserrat; /* Change this later */
+
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+
+}
+
+#portfolio_link {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+
+}
+
+#nav_ul {
+    float: right;
+    margin-right: 20px;
+
+}
+
+
+#nav_ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    
+}
+
+#nav_ul li a {
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+#navbar_element:hover{
+    background: #1b9bff;
+    transition: 0.5s;
+}
+
+#checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* If screen width is smaller, but not small enough for dropdown */
+@media ( max-width: 952px ) {
+    label#check {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    #nav_ul li a {
+        font-size: 16px;
+
+    }
+
+
+    
+}
+
+/* Change media queries values depending on final project  */
+@media ( max-width: 858px ) {
+    #checkbtn {
+        display: block;
+
+    }
+
+    #nav_ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+
+        top: 80px;
+        left: 0;
+        text-align: center;
+
+    }
+
+    #nav_ul li {
+        display: block;
+
+    }
+
+    #nav_ul li a {
+        font-size: 20px;
+
+    }
+
+    #navbar_element:hover {
+        background: none;
+        color: #0082e6;
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Old Navbar: */
+#navbar2 {
+    float: right;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+    float:left; /* Shady part */
+    border-right:1px solid #bbb;
+
+}
+
+#navbar_element2 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar_element2:hover:not(.active) {
+    background-color: #111;
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+/* Change this tag later */
+/* .active {
+    background-color: #4CAF50;
+} */
+/* li:last-child {
+    border-right: none;
+}
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+li:last-child {
+    border-right: none;
+} */
+  
+
+
+
+
 
 .img1 {
     background: url( ../fractal_bg.jpg);

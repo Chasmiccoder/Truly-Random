@@ -13,6 +13,9 @@
     <!-- Custom Atom Favicon  -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
+    <!-- Ion Icon -->
+    <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> <!-- Home Button Icon -->
 
     <title>Truly Random - A Quantum Project</title>
@@ -23,6 +26,11 @@
 <body>
 
     <!--
+        ATTENTION!:
+        https://www.youtube.com/watch?v=r-xe8XJqy7U
+        Add media queries (end part of this vid) Also, Choose an Operation is not aligned properly
+
+
         Structure:
         Navbar with: About, Usage, Applications, Theory, Statistics
         Fractal bg with heading (static image)
@@ -33,18 +41,74 @@
 
         Image 4 = 
 
+        Add go to the top option
+
         Change home logo at the top and merge it with navbar
+
+        Remove link to Ion Icon and make the entire project independent of external scripts
 
     -->
 
 
-
+<!-- 
     <a href="https://thekolheproject.netlify.app/">
         <ion-icon name="home-outline" id="home_icon">Home</ion-icon>
     </a>
+ -->
 
 
-    <div class="img1">
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <input type="checkbox" id="check">
+        
+        <label for="check">
+            <p id="checkbtn">
+            <ion-icon name="hardware-chip-outline"></ion-icon>
+            </p>
+        </label>
+        
+        <label class="portfolio_link">The Kolhe Project</label>
+        <ul id="nav_ul">
+            <li ><a href="#" class="navbar_element">About</a></li>
+            <li><a href="#" class="navbar_element">Usage</a></li>
+            <li><a href="#" class="navbar_element">Applications</a></li>
+            <li><a href="#" class="navbar_element">Theory</a></li>
+            <li><a href="#" class="navbar_element">Statistics</a></li>
+
+        </ul>
+    </nav>
+
+
+
+
+    <br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+    <nav>
+        <ul id="navbar">
+            <li><a href="#home" class="navbar_element">Home</a></li> <!-- class="navbar_element" might be needed -->
+            <li><a href="#about" class="navbar_element">About</a></li>
+            <li><a href="#usage" class="navbar_element">Usage</a></li>
+            <li><a href="#applications" class="navbar_element">Applications</a></li>
+            <li><a href="#theory" class="navbar_element">Theory</a></li>
+            <li><a href="#statistics" class="navbar_element">Statistics</a></li>
+
+        </ul>
+    </nav>
+
+    <br>
+
+    <br><br><br><br><br><br><br>
+
+
+
+    <!-- Heading -->
+    <div class="img1" id="home">
         <div id="heading">
             <br><br><br><br>
             
@@ -58,7 +122,7 @@
     <br>
 
     <!-- About -->
-    <section>
+    <section id="about">
         <div id="content">
             <p id="description">Description of the application <br>Lorem ipsum dolor sit amet, consectetur 
                 adipisicing elit. Autem ea recusandae ut at mollitia dicta ipsa molestias optio incidunt qui 
@@ -77,7 +141,7 @@
 
 
     <!-- Usage -->
-    <section>
+    <section id="usage">
         <div class="function_selection">
             <p id="function_selection_text">Choose an Operation:</p>
             <button class="dropdown" >-Select-</button>

@@ -3,6 +3,7 @@
 
 Usage:
 Activate the virtual environment in which Qiskit has been installed
+activate tf
 
 """
 
