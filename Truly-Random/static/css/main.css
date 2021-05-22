@@ -25,63 +25,108 @@ ion-icon {
     top: 1rem;
 }
 
+.img1 {
+    background: url( ../fractal_bg.jpg);
+    min-height: 100%;
+}
+
 #navbar {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family: montserrat; /* Change this later */
+    font-family: montserrat; 
+    /* Change this later */
 
-    background: #0082e6;
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    z-index: 1;
+
+    border-bottom: 1px solid beige;
+
+    
+    /* background: rgb(231,206,117);
+    background: linear-gradient(90deg, rgba(231,206,117,1) 10%, rgba(0,0,0,1) 115%); */
+
+    background: url(../fractal-blue.jpg);
+    background-position: -50rem;
+
     height: 80px;
     width: 100%;
-
 }
 
-#portfolio_link {
+
+
+
+.portfolio_link {
     color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
+    font-size: 1.2rem;
+    line-height: 60px;
+    /* padding-right:4rem; */
     font-weight: bold;
-
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin:0.7rem;
+    border:1px invisible;
+    border-radius:3px;
+    color: beige;
+    text-shadow: 2px 1px black;
 }
+
+.portfolio_link:hover{
+    /* background: lightblue; */
+    transition: 0.5s;
+    text-shadow: 0px 0px;
+    /* color: gray; */
+    background: lightcyan;
+    color: black;
+}
+
+
 
 #nav_ul {
     float: right;
-    margin-right: 20px;
-
+    /* margin-right: 20px; */
 }
 
 
 #nav_ul li {
     display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
+    line-height: 55px;
+    margin: 0;
+    
+    
+    
     
 }
 
 #nav_ul li a {
-    color: white;
+    color: beige;
     font-size: 17px;
-    text-transform: uppercase;
 
     padding: 7px 13px;
+    /* padding-top: 0; */
     border-radius: 3px;
+    text-decoration: none;
 }
 
-#navbar_element:hover{
-    background: #1b9bff;
-    transition: 0.5s;
+#nav_ul a:hover{
+    /* background: #1b9bff; */
+    background: lightcyan;
+    color: black;
+    transition: 0.2s;
 }
 
 #checkbtn {
     font-size: 30px;
-    color: white;
+    color: beige;
     float: right;
-    line-height: 80px;
-    margin-right: 40px;
+    
+    margin-right: 2rem;
+    margin-top:0.8rem;
     cursor: pointer;
     display: none;
 }
@@ -101,33 +146,35 @@ ion-icon {
         font-size: 16px;
 
     }
-
-
-    
 }
 
 /* Change media queries values depending on final project  */
 @media ( max-width: 858px ) {
     #checkbtn {
         display: block;
-
     }
 
     #nav_ul {
         position: fixed;
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
+        height: 18rem;
         background: #2c3e50;
+        border: 1px solid beige;
+        padding-left: 0rem;
 
-        top: 80px;
-        left: 0;
+        top: 60px;
+        left: -115%;
         text-align: center;
+
+        transition: all 0.5s;
 
     }
 
     #nav_ul li {
         display: block;
-
+        margin: 20px 0;
+        line-height: 30px;
     }
 
     #nav_ul li a {
@@ -135,74 +182,26 @@ ion-icon {
 
     }
 
-    #navbar_element:hover {
+    #nav_ul a:hover {
         background: none;
         color: #0082e6;
         
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    .img1 {
+        background: url( ../fractal_bg.jpg);
+        min-height: 100%;
+        background-position: -45rem;
     }
 
 
 }
 
 
-
-
-
-
-
-/* Old Navbar: */
-#navbar2 {
-    float: right;
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-
-    float:left; /* Shady part */
-    border-right:1px solid #bbb;
-
-}
-
-#navbar_element2 {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-#navbar_element2:hover:not(.active) {
-    background-color: #111;
-    float: left;
-    border-right:1px solid #bbb;
-}
-
-/* Change this tag later */
-/* .active {
-    background-color: #4CAF50;
-} */
-/* li:last-child {
-    border-right: none;
-}
-li {
-    float: left;
-    border-right:1px solid #bbb;
-}
-li:last-child {
-    border-right: none;
-} */
-  
-
-
-
-
-
-.img1 {
-    background: url( ../fractal_bg.jpg);
-    min-height: 100%;
-}
 
 section {
     /* padding: 0.5rem 0.5rem; 50px 80px */
