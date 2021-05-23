@@ -9,7 +9,7 @@ html,body {
 
     background-color: #1f1d1d;
     
-    text-align: center;
+    /* text-align: center; */
 
 }
 
@@ -26,7 +26,15 @@ ion-icon {
 }
 
 .img1 {
-    background: url( ../fractal_bg.jpg);
+    /* golden quantum one (first) */
+    background: url( ../fractal_bg.jpg); 
+    
+    /* Work on this later */
+    background-position: -15rem -8rem;
+
+    /* background: url(../abstract-quantum.jpg);
+    background: url(../abstract-4902607_1280.jpg); */
+
     min-height: 100%;
 }
 
@@ -50,8 +58,13 @@ ion-icon {
     /* background: rgb(231,206,117);
     background: linear-gradient(90deg, rgba(231,206,117,1) 10%, rgba(0,0,0,1) 115%); */
 
-    background: url(../fractal-blue.jpg);
-    background-position: -50rem;
+    /* background: url(../fractal-blue.jpg);
+    background-position: -50rem; */
+
+    /* background: url(../space.jpeg);
+    background: darkgray; */
+    background: url(../fractal-flame.jpg);
+    background-position: 0rem 20rem;
 
     height: 80px;
     width: 100%;
@@ -201,22 +214,21 @@ ion-icon {
 
 }
 
-
-
-section {
-    /* padding: 0.5rem 0.5rem; 50px 80px */
-}
-
-
 #heading {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+    /* font-family: 'Tangerine', cursive; */
+    background: url(../fourthHeadingDesign.png) no-repeat scroll center top transparent;
+
+    background-size: 56%;
+    background-repeat: no-repeat;
+    background-position: 16.5rem 8rem;
+
     text-shadow: 3px 3px #000000;
                             
-
     padding: 4rem;
     padding-top: 0;
     padding-bottom: 0;   
@@ -224,18 +236,20 @@ section {
 
 #main_heading {
     color:beige;
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: underline;
+    /* font-weight: bold; */
+    /* font-style: italic; */
+    /* text-decoration: underline; */
     text-decoration-thickness: 1px;
-    font-size: 2.5em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5em;
     margin-bottom: 0;
 }
 
 #sub_heading {
     color: beige;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 3rem;
+    font-family: 'Tangerine', cursive;
 }
 
 .img2 {
@@ -247,7 +261,25 @@ section {
     
 }
 
+.content {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 3rem;
+    font-family: 'Quicksand', sans-serif;
+    font-size:1.3rem;
+    
 
+}
+
+.content_heading {
+    font-family: 'Tangerine', cursive;
+    font-size: 4rem;
+
+
+}
+
+
+/* Delete this later, not really needed */
 #description {
     display: flex;
     justify-content: center;
@@ -280,11 +312,37 @@ section {
 
 .img3 {
     background: url( ../fractal-blue.jpg);
+    background-position: center;
     min-height: 50%;
 }
 
+.img6 {
+    background: url( ../galaxy-infinity.jpg);
+    background-position: center;
+    min-height: 50%;
 
-.function_selection {
+}
+
+
+.img5 {
+    background: url( ../milky-way.jpg);
+    background-position: center bottom;
+    min-height: 50%;
+
+}
+
+.img4 {
+    /* background: url( ../mathematics-bg.jpg); */
+    background: url( ../physics.jpg);
+    background-position: center center;
+    min-height: 50%;
+
+}
+
+
+
+
+#function_selection {
     position: relative;
     display: inline-block;
     margin-left: 5rem;
@@ -329,18 +387,18 @@ section {
     
 }
 
-.function_selection:hover .dropdown-content {
+#function_selection:hover .dropdown-content {
     display: block;
 
  
 }
 
-.function_selection:hover .dropdown {
+#function_selection:hover .dropdown {
     background-color: #3e8e41;
 }
 
 
-.img1, .img2, .img3 {
+.img1, .img2, .img3, .img4, .img5, .img6 {
     position: relative;
     background-attachment: fixed;
     background-repeat: no-repeat;

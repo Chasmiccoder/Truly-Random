@@ -21,7 +21,7 @@ def binary_to_decimal( binary_string ):
         decimal += 2**i * int( binary_string[-i-1] )
 
     return decimal
-    
+
 
 def print_quantum_circuit():
     """
@@ -51,7 +51,6 @@ def random_coin_toss():
 
     # There is some sort of bias, which forces future iterations to have some correlation with the first 
     # function call
-
 
     q = QuantumRegister(1)
     c = ClassicalRegister(1)
