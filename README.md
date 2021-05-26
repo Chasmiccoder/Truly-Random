@@ -18,3 +18,11 @@ Background Images by <br>
 <a href="https://pixabay.com/users/lumina_obscura-4128746/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3608029">Lumina Obscura</a>
 <br>
 <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=74005">Deutsch</a>
+
+
+<!-- 
+Other Resources:
+http://www.gizma.com/easing/
+https://www.youtube.com/watch?v=oUSvlrDTLi4
+
+ -->

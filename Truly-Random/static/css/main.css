@@ -221,7 +221,7 @@ ion-icon {
     flex-direction: column;
 
     /* font-family: 'Tangerine', cursive; */
-    background: url(../fourthHeadingDesign.png) no-repeat scroll center top transparent;
+    /* background: url(../fourthHeadingDesign.png) no-repeat scroll center top transparent; */
 
     background-size: 56%;
     background-repeat: no-repeat;

@@ -88,11 +88,11 @@
         <!-- <p>The Kolhe Project</p> -->
         <ul id="nav_ul">
             
-            <li ><a href="#" class="navbar_element">About</a></li>
-            <li><a href="#" class="navbar_element">Usage</a></li>
-            <li><a href="#" class="navbar_element">Applications</a></li>
-            <li><a href="#" class="navbar_element">Theory</a></li>
-            <li><a href="#" class="navbar_element">Statistics</a></li>
+            <li ><a href="#tp_about" class="navbar_element" id="tp_nav_about">About</a></li>
+            <li><a href="#tp_usage" class="navbar_element" id="tp_nav_usage">Usage</a></li>
+            <li><a href="#tp_applications" class="navbar_element">Applications</a></li>
+            <li><a href="#tp_theory" class="navbar_element">Theory</a></li>
+            <li><a href="#tp_statistics" class="navbar_element">Statistics</a></li>
 
         </ul>
     </nav>
@@ -107,10 +107,12 @@
             <p id="main_heading">Truly Random</p>
             <br>
             <p id="sub_heading">Generate true random numbers using Quantum Phenomena</p>
-            <br>
+            
         </div>
     </div>
 
+    <div id="tp_about"></div>
+    <br>
     <br>
 
     <!-- About -->
@@ -137,11 +139,21 @@
 
     </section>
 
-    <br>
+    
 
+    <br>
     <div class="img2">
     </div>
 
+
+    
+    <div id="tp_usage"></div>
+
+    
+
+    
+
+    
 
     <!-- Usage -->
     <section>
@@ -276,7 +288,9 @@
         Then, compare it to random.SystemRandom() as well, which uses OS data to generate random numbers
         If Truly Random beats SystemRandom, we will win!
     -->
- 
-    <script src="app.js"></script>    
+
+    
+    <script src="{{url_for('static', filename='javascript/scroll_animation.js')}}"></script>
+
 </body>
 </html>
