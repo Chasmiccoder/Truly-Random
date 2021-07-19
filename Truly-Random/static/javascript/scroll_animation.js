@@ -1,3 +1,5 @@
+// NOTE!: Something wrong with this code. Incorrect final target
+
 function smoothScroll( target, duration ) {
     var target = document.querySelector(target);
     // console.log(target);
@@ -43,15 +45,15 @@ function smoothScroll( target, duration ) {
     requestAnimationFrame(animation); 
 }
 
-var tp_usage = document.querySelector('#tp_nav_usage');
-var tp_about = document.querySelector('#tp_nav_about');
+// var tp_usage = document.querySelector('#tp_nav_usage');
+// var tp_about = document.querySelector('#tp_nav_about'); // Uncomment this for scroll to work
 
 // If the user clicks, run the function given below
-tp_usage.addEventListener('click', function() {
-    smoothScroll('#tp_usage', 1000);
+// tp_usage.addEventListener('click', function() {
+//     smoothScroll('#tp_usage', 1000);
 
-});
+// });
 
-tp_about.addEventListener('click', function() {
-    smoothScroll('#tp_usage', 1000);
-})
+// tp_about.addEventListener('click', function() {
+//     smoothScroll('#tp_usage', 1000);
+// })

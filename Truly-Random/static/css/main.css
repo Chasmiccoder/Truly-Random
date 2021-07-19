@@ -361,7 +361,9 @@ ion-icon {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    /* min-width: 160px; */
+    min-width: 10rem;
+    /* width: 200px; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 
@@ -375,8 +377,8 @@ ion-icon {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-
-  }
+    width: 9rem;
+}
   
 
 
@@ -388,9 +390,7 @@ ion-icon {
 }
 
 #function_selection:hover .dropdown-content {
-    display: block;
-
- 
+    display: block; 
 }
 
 #function_selection:hover .dropdown {

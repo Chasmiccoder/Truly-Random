@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Stylesheet -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/main.css') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+
+    <!-- Custom Atom Favicon  -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Ion Icon -->
+    <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> <!-- Home Button Icon -->
+
+    <title>Truly Random - A Quantum Project</title>
+
+    {% block head %}{% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <input type="checkbox" id="check">
+        
+        <label for="check">
+            <p id="checkbtn">
+            <ion-icon name="hardware-chip-outline"></ion-icon>
+            </p>
+        </label>
+        
+        <label class="portfolio_link">The Kolhe Project</label>
+        <!-- <p>The Kolhe Project</p> -->
+        <ul id="nav_ul">
+            
+            <li ><a href="#tp_about" class="navbar_element" id="tp_nav_about">About</a></li>
+            <li><a href="#tp_usage" class="navbar_element" id="tp_nav_usage">Usage</a></li>
+            <li><a href="#tp_applications" class="navbar_element" id="tp_nav_applications">Applications</a></li>
+            <li><a href="#tp_theory" class="navbar_element" id="tp_nav_theory">Theory</a></li>
+            <li><a href="#tp_statistics" class="navbar_element" id="tp_nav_statistics">Statistics</a></li>
+            <!-- might not need  id="tp_nav_statistics" part -->
+        </ul>
+    </nav>
+
+    <br><br>
+    <!-- Heading -->
+    <div class="img1" id="home">
+        <div id="heading">
+            <br><br><br><br>
+
+            <p id="main_heading">Truly Random</p>
+            <br>
+            <p id="sub_heading">Generate true random numbers using Quantum Phenomena</p>
+            
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- About -->
+    <section>
+        <div id="about" class="content">
+            <div id="tp_about"></div>
+            <p class="content_heading">About</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita perspiciatis repellat nulla autem eaque iure alias nihil nemo a! Voluptate laboriosam ea maiores mollitia odio dolores dolorum quisquam in expedita, incidunt culpa numquam ut quia libero quae laborum deleniti voluptas odit eum, eveniet repellat soluta consectetur ab est? Necessitatibus fuga laudantium aliquid, veritatis labore ut. Ratione excepturi id commodi earum voluptates omnis maiores recusandae eaque minus dignissimos. Sunt ea accusamus aspernatur deserunt error quasi doloremque odit quos sed ducimus. Explicabo nam sunt nisi, sint dignissimos tempore magnam, est expedita nemo modi animi dicta laboriosam provident, dolores voluptatibus corporis dolorem sed.</p>
+
+
+            <!-- Remove this later! -->
+            <!-- <p id="description">Description of the application <br>
+
+                <br>
+                
+                Lorem ipsum dolor sit amet, consectetur 
+                adipisicing elit. Autem ea recusandae ut at mollitia dicta ipsa molestias optio incidunt qui 
+                non, eaque magnam cumque voluptate sequi minus, quia veritatis officia temporibus ratione? 
+                Aliquid dicta eaque eos odio veritatis tempora fugiat? Quia expedita dolorem, labore distinctio 
+                debitis unde provident repudiandae ut?
+
+                </p> 
+            -->
+        </div>
+
+    </section>
+
+    
+    <br>
+    <div class="img2">
+    </div>
+
+
+    
+
+    {% block body %}{% endblock %}
+
+
+    <br>
+    <div class="img3">
+    </div>
+
+    <section>
+        <div id="applications" class="content">
+            <div id="tp_applications"></div>
+            <p class="content_heading">Application</p>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae optio dolorem nulla architecto! Illo eaque molestias eveniet voluptas. Laboriosam rem maxime, deserunt non sit praesentium aperiam, itaque nostrum excepturi expedita delectus eum ipsam laborum dolore sunt. Deleniti molestiae vero repudiandae temporibus tempora a fuga, odit sunt delectus magnam voluptatibus ex? Ullam, consequatur? Omnis ab consequuntur veritatis quos quibusdam impedit maxime cumque magnam, ad aliquid aliquam quia accusamus itaque delectus tempora quis nihil repudiandae, incidunt, repellendus eligendi minus aspernatur. Eligendi reiciendis facere rem tenetur perferendis nulla mollitia dicta ad. Commodi excepturi ex harum praesentium quibusdam sapiente non officiis unde vero sit.</p>
+
+
+
+        </div>
+    </section>
+
+
+    <div class="img4">
+    </div>
+
+    <section>
+        <div id="theory" class="content">
+            <div id="tp_theory"></div>
+            <p class="content_heading">Theory</p>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde reiciendis impedit facilis doloremque odio ratione cum voluptates laudantium mollitia? Cupiditate dolorum odit illo voluptates, fugit in consequuntur voluptas quae tempora ipsum? Doloremque saepe dolorum aliquid rem voluptatem. Ex quaerat quod necessitatibus est quis? Debitis, consequuntur? Ad, fuga recusandae. Quia inventore, vel reprehenderit et in suscipit maxime veniam libero nihil autem, sapiente ad adipisci labore aliquam error similique ea eius alias fugiat enim fugit odio commodi quaerat laudantium. Harum aliquid officia fugiat laudantium commodi laboriosam? A cumque voluptas voluptatem veritatis? Ab optio amet consequuntur veniam dolorum necessitatibus ipsum dolorem molestiae reprehenderit!</p>
+
+
+
+        </div>
+    </section>
+
+
+    <div class="img5">
+    </div>
+
+    <div id="tp_statistics"></div>
+
+    <section>
+        <div id="statistics" class="content">
+            
+            <p class="content_heading">Statistics</p>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo ipsam porro voluptatum, officiis inventore, culpa cumque tenetur ut asperiores blanditiis nisi, provident eaque illo dolores. Nihil cumque quae quisquam! Delectus, officiis? Culpa ducimus eligendi inventore nam velit accusamus praesentium aspernatur ad sapiente libero adipisci, recusandae omnis maiores, excepturi voluptatem, quae animi? Praesentium, rem provident nostrum quo magni soluta tempore, omnis ea ad sint alias mollitia. Maiores, optio corrupti. Sint mollitia nihil necessitatibus, est reprehenderit, in veniam quas at temporibus iusto, unde voluptatem omnis officia blanditiis repellat tempore? Distinctio cupiditate necessitatibus quo, iure sit reprehenderit! Placeat ad labore accusamus modi cupiditate.</p>
+
+
+        </div>
+    </section>
+
+    <div class="img6">
+    </div>
+
+    <section>
+        <div id="thanks" class="content">
+            <p class="content_heading">Cheers!</p>
+
+            <p>Thanks for going through my project! <br> 
+            If you want to contact me, please visit <a href=""></a></p>
+
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium, tempore voluptate repudiandae dignissimos commodi inventore molestiae quas eum perspiciatis fugiat excepturi pariatur dicta similique debitis reiciendis aliquam odio veniam iure error tempora explicabo, consectetur sunt. Optio rerum tempora expedita, ipsum eius culpa itaque blanditiis error ipsa, et voluptas minima?</p>
+            
+        </div>
+    </section>
+
+    
+      <!-- Print QUantum Circuit option-->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+  
+  
+      <!-- option to generate .csv file with random numbers -->
+  
+      
+  
+      
+      <!-- 
+          NOTE!  Now create a statistics.html page to compare the quantum random numbers with the numbers
+          generated using the normal random library in python
+          Make comparison with python's random library, and this Quantum RNG
+          Then, compare it to random.SystemRandom() as well, which uses OS data to generate random numbers
+          If Truly Random beats SystemRandom, we will win!
+  
+          Use Chi Squared Test to test for authenticity of our app
+  
+          See if we can make an API out of this (for others to use)
+          https://towardsdatascience.com/develop-and-deploy-a-scalable-restful-api-using-nodejs-mongo-232ad79e0f6c
+  
+      -->
+  
+      
+      <!-- Scroll Animation for Navbar -->
+      <script src="{{url_for('static', filename='javascript/scroll_animation.js')}}"></script>
+  
+      <!-- RNG Usage -->
+      <script src="{{url_for('static', filename='javascript/rng.js')}}"></script>
+  
+  </body>
+  </html>
+
+
