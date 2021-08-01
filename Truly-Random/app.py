@@ -6,8 +6,7 @@ from flask_wtf import FlaskForm
 
 from datetime import datetime #remove this later
 
-
-
+import quantum_rng
 
 # from flask_sqlalchemy import SQLAlchemy
 
@@ -36,8 +35,6 @@ class Choice(db.Model):
 db.drop_all()
 db.create_all()
 
-
-
 # Operations
 Op1 = Choice(name='Coin Toss', details='Simulate a True Random Coin Toss')
 Op2 = Choice(name='Integer', details='Generate a Random Integer between two given numbers')
@@ -53,15 +50,6 @@ for operation in Operations:
 db.session.commit()
 
 
-class Todo( db.Model ):
-    id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(200), nullable=False) # nullable = False means that the user cannot create a blank task
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self):
-        return '<Task %r>' % self.id
-
-
 def choice_query():
     return Choice.query
 
@@ -71,7 +59,7 @@ class ChoiceForm(FlaskForm):
     # The get_label attribute is better than putting __repr__ in Choice. You can pass 'id','details', or other columns
 
 
-
+# Then we need to create an index route
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = ChoiceForm()
@@ -82,23 +70,45 @@ def index():
     # form.opts.query = Choice.query.filter( Choice.id > 1 ) # Now we won't see choice 1
 
     num = 0
+    chosen = False
 
     operation = str(form.opts.data)
     
     if operation == 'Coin Toss':
-        num = 1
+        num = quantum_rng.random_coin_toss()
+        chosen = True
+
     elif operation == 'Integer':
-        num = 2
+        a = 0
+        b = 10
+        precision = 6
+        num = quantum_rng.rand_int(a,b,precision)
+        chosen = True
+
     elif operation == 'Float':
-        num = 3
+        a = 10
+        b = 20
+        precision = 7
+        num = quantum_rng.rand_float(a,b,precision)
+        chosen = True
+
     elif operation == 'N Digit Int':
-        num = 4
+        n = 4
+        num = quantum_rng.rand_n_digit(n)
+        chosen = True
+
     elif operation == 'Fraction':
-        num = 5
+        precision = 8
+        num = quantum_rng.rand(precision)
+        chosen = True
+
     elif operation == 'N Digit Binary':
-        num = 6
+        n = 3
+        num = quantum_rng.rand_n_digit_binary(n)
+        chosen = True
     
-    numbers += [num]
+    if chosen:
+        numbers += [num]
 
     # if form.validate_on_submit():
     #     return '<h1>{}</h1>'.format( form.opts.data )
@@ -113,33 +123,6 @@ def index():
 
 # Move this to a class
 # numbers = []
-
-# Then we need to create an index route
-@app.route('/', methods=['POST', 'GET'])
-def index2():
-    global numbers
-
-    if request.method == 'POST':
-        # operation = request.form.get('select_operation')
-
-        operation = ChoiceForm()
-
-        # new_task = Todo(content=task_content)
-        num = 0 # depending on operation
-
-        if operation.data == "dingo":
-            num = 1
-
-        try:
-            numbers += [num]
-            numbers += [operation]
-            return redirect('/') # Redirect to the home page
-        except:
-            return "Error while Adding Task!"
-
-    else:
-        return render_template('index.html', numbers=numbers)
-    
 
 
 

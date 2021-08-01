@@ -1,3 +1,12 @@
+"""
+
+
+Usage:
+Activate the virtual environment in which Qiskit has been installed
+activate tf
+
+"""
+
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute, Aer
 import math
 
@@ -159,3 +168,55 @@ def rand_float( a,b, precision = 5 ):
     
     return random_float
 
+
+"""
+Main
+"""
+
+# print( "Quantum Circuit:" )
+# print_quantum_circuit()
+
+# r = random_coin_toss()
+# print( "Random Coin Toss: ", r )
+# print()
+
+
+# n = int(input("Enter Length of Binary Number: " ) )
+# rb = rand_n_digit_binary( n )
+# print( "Random n Digit Binary Number: ", rb)
+# print()
+
+# bn = input( "Enter Binary Number: " )
+# print( "Decimal Equivalent: ", binary_to_decimal(bn) )
+# print()
+
+n = int( input( "Enter value of n: " ) )
+print( "N Digit Decimal Number: ", rand_n_digit( n ) )
+print()
+
+print( "Random Number between 0 and 1: ", rand(n) )
+print()
+
+print( "Enter value for a: " )
+a = int(input())
+print( "Enter value for b: " )
+b = int(input())
+ans1 = rand_int(a,b)
+ans2 = rand_float(a,b, 10)
+print( "Random Integer between %d and %d: %d" %(a,b,ans1) )
+print( "Random Float between %d and %d: %f" %(a,b,ans2) )
+
+
+"""
+Push all this to the project readme
+Make note of all the requirements and project components (For example python version, flask version, etc)
+
+Resources
+https://qiskit.org/documentation/index.html
+
+
+Other similar projects:
+https://www.random.org/ (But uses Atmoshperic Noise)
+
+
+"""

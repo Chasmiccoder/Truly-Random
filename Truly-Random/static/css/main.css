@@ -13,6 +13,8 @@ html,body {
 
 }
 
+
+
 #home_icon {
     display: flex;
 }
@@ -262,13 +264,13 @@ ion-icon {
 }
 
 .content {
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    /* display: flex; */
+    text-align: center;
     margin-bottom: 3rem;
     font-family: 'Quicksand', sans-serif;
     font-size:1.3rem;
-    
-
 }
 
 .content_heading {
@@ -396,6 +398,49 @@ ion-icon {
 #function_selection:hover .dropdown {
     background-color: #3e8e41;
 }
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: #343434;        /* color of the tracking area */
+    
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #343434;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid snow;  /* creates padding around scroll thumb */
+}
+
+#usage_output {
+    background-color: #28282B;
+    width: 40%;
+    height: 150px;
+    display: flex; 
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow-y: scroll;
+
+    font-weight: bold;
+
+    border: 2px solid pink;
+    border-radius: 20px;
+    border-style: inset;
+
+    /* justify-content: center; */
+    /* align-content: center; */
+    
+    /* margin: 10rem; */
+    /* flex-direction: column;
+    justify-content: center; */
+
+}
+
+
 
 
 .img1, .img2, .img3, .img4, .img5, .img6 {
