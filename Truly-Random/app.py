@@ -1,14 +1,9 @@
-# NOTE: If the server is not updating, refresh - ctrl + shift + r
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from wtforms_sqlalchemy.fields import QuerySelectField
 from flask_wtf import FlaskForm
 
-from datetime import datetime #remove this later
-
 import quantum_rng
-
-# from flask_sqlalchemy import SQLAlchemy
 
 numbers = []
 
@@ -20,13 +15,11 @@ app.config['SECRET_KEY'] = 'secret'
 db = SQLAlchemy( app )
 
 
-
 class Choice(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50)) #Operation
+    name = db.Column(db.String(50))     #Operation
     details = db.Column(db.String(150)) # Extra info
-    # numbers = db.Column(db.Float)
-
+    
     # Representation
     def __repr__(self):
         return '{}'.format(self.name) 
@@ -64,10 +57,6 @@ class ChoiceForm(FlaskForm):
 def index():
     form = ChoiceForm()
     global numbers
-    
-
-    # Filter Query:
-    # form.opts.query = Choice.query.filter( Choice.id > 1 ) # Now we won't see choice 1
 
     num = 0
     chosen = False
@@ -110,44 +99,8 @@ def index():
     if chosen:
         numbers += [num]
 
-    # if form.validate_on_submit():
-    #     return '<h1>{}</h1>'.format( form.opts.data )
-
     return render_template('index.html', form=form, numbers=numbers)
-
-
-
-
-# class numbers():
-#     nums = []
-
-# Move this to a class
-# numbers = []
-
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# @app.route('/')
-# def home():
-#     return render_template('index.html')
-
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         userName = request.form['nm']
-
-#         # The user in quotes is the user function defined below, and usr is its parameter
-#         return redirect( url_for("user", usr=userName) ) 
-
-#     else:
-#         return render_template('login.html')
-
-#     # return render_template('login.html')
-
-# @app.route('/<usr>')
-# def user( usr ):
-#     return "<h1>" + usr + "</h1>" 
-

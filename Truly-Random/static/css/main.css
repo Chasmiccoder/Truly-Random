@@ -8,12 +8,7 @@ html,body {
     color: beige;
 
     background-color: #1f1d1d;
-    
-    /* text-align: center; */
-
 }
-
-
 
 #home_icon {
     display: flex;
@@ -56,24 +51,12 @@ ion-icon {
 
     border-bottom: 1px solid beige;
 
-    
-    /* background: rgb(231,206,117);
-    background: linear-gradient(90deg, rgba(231,206,117,1) 10%, rgba(0,0,0,1) 115%); */
-
-    /* background: url(../fractal-blue.jpg);
-    background-position: -50rem; */
-
-    /* background: url(../space.jpeg);
-    background: darkgray; */
     background: url(../fractal-flame.jpg);
     background-position: 0rem 20rem;
 
     height: 80px;
     width: 100%;
 }
-
-
-
 
 .portfolio_link {
     color: white;
@@ -92,30 +75,21 @@ ion-icon {
 }
 
 .portfolio_link:hover{
-    /* background: lightblue; */
     transition: 0.5s;
     text-shadow: 0px 0px;
-    /* color: gray; */
     background: lightcyan;
     color: black;
 }
-
-
 
 #nav_ul {
     float: right;
     /* margin-right: 20px; */
 }
 
-
 #nav_ul li {
     display: inline-block;
     line-height: 55px;
     margin: 0;
-    
-    
-    
-    
 }
 
 #nav_ul li a {
@@ -123,13 +97,11 @@ ion-icon {
     font-size: 17px;
 
     padding: 7px 13px;
-    /* padding-top: 0; */
     border-radius: 3px;
     text-decoration: none;
 }
 
 #nav_ul a:hover{
-    /* background: #1b9bff; */
     background: lightcyan;
     color: black;
     transition: 0.2s;

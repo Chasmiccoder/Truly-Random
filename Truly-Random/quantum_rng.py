@@ -1,3 +1,16 @@
+"""
+Usage of this module:
+=====================
+
+
+
+
+
+
+
+"""
+
+
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute, Aer
 import math
 
@@ -40,9 +53,6 @@ def random_coin_toss():
     Returns either 0 or 1 with exactly 50% probability of either event occuring
     """
 
-    # There is some sort of bias, which forces future iterations to have some correlation with the first 
-    # function call
-
     q = QuantumRegister(1)
     c = ClassicalRegister(1)
 
@@ -56,9 +66,9 @@ def random_coin_toss():
     job_sim = execute ( qc, backend, shots = 1 ) 
     sim_result = job_sim.result()
 
+    # counts is {'1': 1} or {'0': 1}
     counts = sim_result.get_counts( qc )
-    # counts is {'1': 1} or {'0': 1} 
-
+     
     # At this point, we have simulated a perfectly random coin toss
     toss_outcome = int( list(counts.keys())[0] )
 
@@ -158,4 +168,3 @@ def rand_float( a,b, precision = 5 ):
         random_float -= 1
     
     return random_float
-
