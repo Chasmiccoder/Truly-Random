@@ -6,6 +6,81 @@
 {% block body %}
 
     <section>
+        <div id="usage" class="content">
+            <div id="tp_usage"></div>
+            <p class="content_heading">Usage</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eum repudiandae cum adipisci tempore qui recusandae, odit vitae enim voluptate aut possimus culpa sapiente, quam autem fugit necessitatibus! Porro doloremque exercitationem reiciendis aliquam laboriosam illo veritatis voluptatum omnis commodi accusamus ex, cum deserunt quisquam, expedita dolorem quod asperiores, placeat temporibus.</p>
+
+            <br>
+
+            <!-- Choose Operation -->
+            <div class="two">
+                <h4>Frequently Used Form Fields</h4>
+                <select name="operation" id="operation_select">
+                    <option value="coin_toss">Coin Toss</option>
+                    <option value="integer">Integer</option>
+                    <option value="float">Float</option>
+                    <option value="n_digit_int">N Digit Integer</option>
+                    <option value="fraction">Fraction</option>
+                    <option value="n_digit_binary">N Digit Binary</option>
+                </select>
+                <button onclick="getOperation()">Choose</button>
+
+                
+            </div>
+
+            <!-- Final Form to gather data about type of Random number, range, etc. -->
+            <div class="three">
+                <h2>Your Dynamic Form!</h2>
+                <form action="#" id="mainform" method="get" name="mainform">
+                <span id="myForm"></span>
+                <p></p><input type="submit" value="Submit">
+                </form>
+            </div>
+
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="content" id="usage_output">
+            <p>Yo</p>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+
+    </section>
+
+    <!--
+    <section>
 
         <div id="usage" class="content">
             <div id="tp_usage"></div>
@@ -38,7 +113,7 @@
         </div>
         
         <div id="usage_output" class="content">
-            <!-- <p>RNG:</p>  -->
+            
 
             {% for num in numbers %}
                 <p>{{ num }}</p>
@@ -47,5 +122,7 @@
         </div>
 
     </section>
+    -->
+    <!-- <p>RNG:</p>  -->
 
 {% endblock %}

@@ -42,10 +42,8 @@ for operation in Operations:
 
 db.session.commit()
 
-
 def choice_query():
     return Choice.query
-
 
 class ChoiceForm(FlaskForm):
     opts = QuerySelectField(query_factory=choice_query, allow_blank=True, get_label='name')
@@ -62,7 +60,22 @@ def index():
     chosen = False
 
     operation = str(form.opts.data)
+
+    """
+    if operation == 'Coin Toss':
+        num = quantum_rng.random_coin_toss()
+        numbers += num
+
+        return render_template('index.html', form=form, numbers=numbers)
+
+    elif operation == 'Integer':
+        form2 = ChoiceForm()
+
+        None
+
     
+
+    """
     if operation == 'Coin Toss':
         num = quantum_rng.random_coin_toss()
         chosen = True
@@ -100,6 +113,7 @@ def index():
         numbers += [num]
 
     return render_template('index.html', form=form, numbers=numbers)
+
 
 
 if __name__ == '__main__':
