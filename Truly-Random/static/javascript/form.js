@@ -7,32 +7,6 @@ var previous = ""; // prevents additional dialogue boxes from being created
 // find a better way of doing this instead of using global vars
 var numbers = [];
 
-// Put these following lines in a function?
-// const formWrapper = document.querySelector('.formWrapper');
-// const form = formWrapper.querySelectorAll('.formClass');
-// const submitInput = form[0].querySelector('input[type="submit"]');
-
-// // Parameter e is an event
-// function getDataForm(e) {
-//     e.preventDefault(); // prevent default submit behaviour on clicking the button
-//     console.log("lknfknlq");
-//     // looks through all the form fields and collects the data present in them
-//     var formData = new FormData(form[0]);
-
-//     alert( formData.get('lowerLimitField') + ' - ' + formData.get('upperLimitField') );
-
-// }
-
-// Create an event listener that will trigger getDataForm(e)
-// document.addEventListener('DOMContentLoaded', function(){
-//     console.log("REACHED");
-//     submitInput.addEventListener( 'click', getDataForm, false ); 
-//  }, false);
- 
-
-
-
-
 function getOperation() {
     var e = document.getElementById("operation_select").value;
     var num = 0; // Random Number Generated
@@ -74,19 +48,6 @@ function getOperation() {
         previous = e;
 
         
-        // var r = document.createElement('span');
-        // // submit
-        // var sub = document.createElement("INPUT");
-        // sub.setAttribute("type", "submit");
-        // sub.setAttribute("value", "Generate!");
-        // increment();
-        // sub.setAttribute("name", "textelement_" + i);
-
-        // r.appendChild(sub);
-
-        // increment()
-        // r.setAttribute("id", "id_" + i);
-        // document.getElementById("mainform").appendChild(r);
 
 
         numbers += [num];
@@ -131,18 +92,18 @@ function fetchInteger() {
 
     var r = document.createElement('span');
     // submit
-    var sub = document.createElement("BUTTON");
-    // sub.setAttribute("type", "button");
-    // sub.setAttribute("value", "Generate!");
+    var sub = document.createElement("INPUT");
+    sub.setAttribute("type", "submit");
+    sub.setAttribute("value", "Generate!");
     sub.innerHTML = "Generate!";
     increment();
     sub.setAttribute("name", "textelement_" + i);
-    sub.setAttribute("onClick", "displayNumber");
+    sub.setAttribute("onsubmit", "displayNumber()");
 
     r.appendChild(sub);
 
     increment()
-    r.setAttribute("id", "id_" + i);
+    r.setAttribute("id", "id_submitButton");
     document.getElementById("mainform").appendChild(r);
 
 
@@ -169,13 +130,28 @@ function fetchNDigitBinary() {
 }
 
 
+const form = document.getElementById('mainform');
+form.onsubmit = displayNumber;
 
+function displayNumber(event) {
+    event.preventDefault();
 
-function displayNumber() {
+    // document.getElementById("id_submitButton").addEventListener("click", function(event){
+    //     event.preventDefault();
+    // });
+
     var ll = document.getElementById('lowerLimitField').value;
     var ul = document.getElementById('upperLimitField').value;
 
-    tmp = (ll+ul)/2;
+    alert("Activated!" + ll);
+    // console.log("Activated!");
+
+    ll = parseInt(ll);
+    ul = parseInt(ul);
+    
+
+    var tmp = (ll+ul)/2;
     // outputHere
-    document.getElementById('outputHere').value = tmp;
+    document.getElementById('outputHere').innerHTML = "HERE!:" + tmp;
 }
+    
