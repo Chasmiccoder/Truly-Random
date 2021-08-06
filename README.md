@@ -64,7 +64,7 @@ https://www.youtube.com/watch?v=r-xe8XJqy7U
 Add media queries (end part of this vid) Also, Choose an Operation is not aligned properly
 Add go to the top option
 Reconfirm image credits, pixabay
-Remove link to Ion Icon and make the entire project independent of external scripts
+Remove link to Ion Icon and make the entire project independent of external scripts (Ion Icon not working)
 Fix navbar tp
 option to generate .csv file with random numbers
 create a statistics.html page to compare the quantum random numbers with the numbers
@@ -78,4 +78,9 @@ JS runs on client side (web browser), but python needs a server to run. So we ne
 a database anyways (with flask_wtf). Create a system that flushes the db every 5 minutes or so
 to prevent memory overload.
 Document properly with a process diagram
+
+
+Add feature to copy / open numbers in new page as raw data / download as csv
+Add feature to set the number of numbers to generate 
+(instead of pressing "generate!" button 5 times, let the user set val = 5)
 
