@@ -14,6 +14,7 @@ function getOperation() {
 
 
     if ( previous != e ) {
+        document.getElementById("enter-values-tag").innerHTML = "Enter Values!";
         // alert(previous);
         if ( previous == "integer" ) {
             var parent = document.getElementById("formInteger");
@@ -578,6 +579,10 @@ function updateOutput(generatedNums) {
     Takes an array of integers and adds them to the output field
     */
     // alert("REACHED!");
+
+    // Everytime the output gets updated, we need to refresh the text in the copy button
+    document.getElementById('clipboardCopy').innerHTML = "Copy";
+
     howMany = generatedNums.length;
     for ( var i = 0; i < howMany; i++ ) {
         
@@ -603,3 +608,24 @@ function updateOutput(generatedNums) {
     }
 
 }
+
+
+document.getElementById('clipboardCopy').addEventListener('click', clipboardCopy);
+async function clipboardCopy() {
+    // var text = document.getElementById("usage_output").innerHTML;
+    var text = "";
+
+    for ( var i = 0; i < numberOfNumbersGenerated; i++ ) {
+        text += numbers[i];
+        if ( i != numberOfNumbersGenerated - 1 ) {
+            text += " ";
+        }
+    }
+
+    console.log(text);
+    await navigator.clipboard.writeText(text);
+
+    document.getElementById('clipboardCopy').innerHTML = "Copied!";
+    
+}
+

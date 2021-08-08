@@ -16,7 +16,7 @@
 
             <!-- Choose Operation -->
             <div class="two">
-                <h4>Frequently Used Form Fields</h4>
+                <h4>Choose the type of Random Number you want to generate</h4>
                 <select name="operation" id="operation_select">
                     <option value="coin_toss">Coin Toss</option>
                     <option value="integer">Integer</option>
@@ -32,14 +32,12 @@
 
             <!-- Final Form to gather data about type of Random number, range, etc. -->
             <div class="three formWrapper"> <!-- Remove class three later and replace instances with formWrapper -->
-                <h2>Your Dynamic Form!</h2>
+                <h2 id="enter-values-tag"></h2>
                 <form action="#" id="formInteger" method="get" name="mainform" class="formClass"></form>
 
                 <form action="#" id="formFloat" method="get" name="mainform" class="formClass"></form>
 
                 <form action="#" id="formCoinToss" method="get" name="mainform" class="formClass"></form>
-
-                <form action="#" id="formFraction" method="get" name="mainform" class="formClass"></form>
             
                 <form action="#" id="formNDigitInt" method="get" name="mainform" class="formClass"></form>
                 
@@ -77,8 +75,9 @@
         <br>
         <br>
 
+        <button id="clipboardCopy">Copy</button>
+        <button onclick="openRaw()">Raw</button>
         <div class="content" id="usage_output">
-            <!-- <p id="outputHere">Yo</p> -->
             
             
         </div>
