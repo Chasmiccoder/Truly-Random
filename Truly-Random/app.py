@@ -1,7 +1,8 @@
-from flask import Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, url_for, redirect, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from wtforms_sqlalchemy.fields import QuerySelectField
 from flask_wtf import FlaskForm
+import json
 
 import quantum_rng
 
@@ -37,6 +38,8 @@ Op5 = Choice(name='Fraction', details='Generate a Random Float between 0 and 1')
 Op6 = Choice(name='N Digit Binary', details='Generate an N Digit Binary Number')
 Operations = [Op1, Op2, Op3, Op4, Op5, Op6]
 
+
+
 for operation in Operations:
     db.session.add( operation )
 
@@ -55,7 +58,7 @@ class ChoiceForm(FlaskForm):
 def index():
     form = ChoiceForm()
     global numbers
-
+    
     num = 0
     chosen = False
 
@@ -116,5 +119,50 @@ def index():
 
 
 
+# AJAX Request part
+
+"""
+import os
+
+path_cwd = os.path.dirname(os.path.realpath(__file__))
+
+path_templates = os.path.join(path_cwd, "templates")
+
+path_static = os.path.join(path_cwd, "static")
+"""
+
+@app.route('/func', methods=['GET', 'POST'])
+def func():
+    # print("REACEHDBOIII REACEHDBOIII\n REACEHDBOIII \nREACEHDBOIII")
+
+    dataGet = request.get_json(force=True)
+    # Try without force=True
+
+    print(dataGet) # looks good
+
+    # dataGet is now a python dict
+    lowerLimit = dataGet["lowerLimit"]
+    upperLimit = dataGet["upperLimit"]
+
+    # num = quantum_rng.rand_int(lowerLimit, upperLimit)
+    num = 812389
+
+    # Need to pass an array and account for n generations later (instead of just one number)
+    dataReply = {"numbers": num }
+
+    print("HERE", dataReply)
+
+    dataReply = json.dumps(dataReply)
+
+    print("HERE FINAL", dataReply)
+
+    return dataReply
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+

@@ -84,3 +84,6 @@ Add feature to copy / open numbers in new page as raw data / download as csv
 Add feature to set the number of numbers to generate 
 (instead of pressing "generate!" button 5 times, let the user set val = 5)
 
+Create a main.js and use that
+Handle all warnings
+

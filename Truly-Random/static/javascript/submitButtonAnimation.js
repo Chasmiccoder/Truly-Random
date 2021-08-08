@@ -2,6 +2,7 @@
 TUNE THIS FOR submit buttons and not normal input buttons
 */
 
+/*
 const button   = document.querySelector('.submit-button'),
       stateMsg = document.querySelector('.pre-state-msg');
 
@@ -22,3 +23,4 @@ const setInitialButtonState = function() {
 };
 
 button.addEventListener('click', updateButtonMsg);
+*/

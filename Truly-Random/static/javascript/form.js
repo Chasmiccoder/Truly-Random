@@ -10,7 +10,6 @@ var numberOfNumbersGenerated = 0;
 
 function getOperation() {
     var e = document.getElementById("operation_select").value;
-    var num = 0; // Random Number Generated
     // change variable name of e
 
     if ( previous == e ) {
@@ -21,7 +20,7 @@ function getOperation() {
     else if ( previous != e ) {
 
         // clear function that deletes previous fields
-
+        // change var names for fetchCoinToss(), fetchInteger(), etc.
         if ( e == "coin_toss" ) {
             fetchCoinToss();
         }
@@ -114,14 +113,10 @@ function fetchInteger() {
     submitButtonSpan3.setAttribute("class", "done-state-msg hide");
     submitButtonSpan3.innerHTML = "Done!";
 
-
-
     r.appendChild(sub);
 
     increment()
     r.setAttribute("id", "id_submitButton");
-
-   
 
 
     document.getElementById("mainform").appendChild(r);
@@ -149,6 +144,7 @@ const form = document.getElementById('mainform');
 form.onsubmit = displayNumber;
 
 // change function name to setNumber or something
+// Need this for integers and float generation
 function displayNumber(event) {
     event.preventDefault();
 
@@ -159,6 +155,11 @@ function displayNumber(event) {
     ul = parseInt(ul);
     
     var num = (ll+ul)/2;
+    // Use AJAX to make a post request to python backend and fetch n random numbers
+    // Create field to accept n (number of numbers to generate in one single backend call)
+
+    var num = generateInt(ll, ul);
+
 
     updateOutput(num);
     // outputHere
@@ -192,3 +193,47 @@ function updateOutput(num) {
 
 }
 
+
+function generateInt(ll, ul) {
+    /*
+    Sends a POST request (using AJAX) to the python backend and fetches a random integer between
+    the upper and lower limits
+    */
+
+    var xml = new XMLHttpRequest();
+
+    // xml.open("POST", "{{url_for(func)}} ", true); // func is name of function that fetches integer
+    xml.open("POST", "/func", true);
+    // passing true to make the process asynchronous
+
+    xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xml.onload = function() {
+        // alert("REACHED");
+        // this is where we fetch the data from the back end
+        var dataReply = JSON.parse(this.responseText);
+        console.log(dataReply);
+        alert("RandInt: " + dataReply["numbers"]);
+
+    }; // endfunction
+
+
+    dataSend = {
+        'numbers' : 'dummyString',
+        'lowerLimit' : ll,
+        'upperLimit' : ul
+        };
+        
+    // this is where we send the upper and lower limits
+
+
+    xml.send(JSON.stringify(dataSend)); // sends the JSON file as 1 single string
+
+
+
+
+
+
+
+
+}
