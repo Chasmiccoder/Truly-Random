@@ -108,6 +108,9 @@ def rand( precision = 5 ):
     """
     Returns a random float value between 0 and 1
     precision = number of digits after the decimal point
+
+    There is a chance that it might produce a fraction with lesser than the specified
+    digits becuase the trailing digits could also be 0 (and thus ignored in future processing by the programming language)
     """
 
     random_float = ""
@@ -136,7 +139,7 @@ def rand_n_digit( n ):
     return random_number
 
 
-def rand_int( a,b, howMany = 1, precision = 20 ):
+def rand_int( a,b, precision = 20 ):
     """
     Returns a random integer value in the range of [a,b]
     precision = number of digits to be passed in rand()
@@ -147,12 +150,11 @@ def rand_int( a,b, howMany = 1, precision = 20 ):
     a = int(a)
     b = int(b)
 
-    randomNums = []
-    for i in range(howMany):
-        num = int( rand( precision ) * ( b - a ) ) + a
-        randomNums += [num]
+    
+    num = int( rand( precision ) * ( b - a ) ) + a
+        
 
-    return randomNums
+    return num
 
 
 def rand_float( a,b, precision = 5 ):
@@ -164,10 +166,10 @@ def rand_float( a,b, precision = 5 ):
     a = int(a)
     b = int(b)
     
-    random_float = rand_int( a,b, precision ) +  rand( precision )
-
+    num = rand_int( a,b, precision ) +  rand( precision )
     # There is a chance that rand_int can return b. This condition retains the original range
-    if ( random_float > b ):
-        random_float -= 1
-    
-    return random_float
+    if ( num > b ):
+        num -= 1
+        
+
+    return num

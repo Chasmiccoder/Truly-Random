@@ -88,3 +88,4 @@ Create a main.js and use that
 Handle all warnings
 Put restriction for text fields as integers / floats only (no alphabets)
 
+For numbers dealing with floats, add one more text field to accept precision

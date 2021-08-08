@@ -10,40 +10,71 @@ var numberOfNumbersGenerated = 0;
 
 function getOperation() {
     var e = document.getElementById("operation_select").value;
-    // change variable name of e
+    // change variable name of e to currentOp
 
-    if ( previous == e ) {
-        // something
-        console.log("same op");
-    }
 
-    else if ( previous != e ) {
+    if ( previous != e ) {
+        // alert(previous);
+        if ( previous == "integer" ) {
+            var parent = document.getElementById("formInteger");
+            parent.removeChild( document.getElementById("parameterSpan") );
+            parent.removeChild( document.getElementById("id_submitButton") );
+        }
 
-        // clear function that deletes previous fields
-        // change var names for fetchCoinToss(), fetchInteger(), etc.
+        if ( previous == "float" ) {
+            var parent = document.getElementById("formFloat");
+            parent.removeChild( document.getElementById("parameterSpan") );
+            parent.removeChild( document.getElementById("id_submitButton") );
+        }
+
+        if ( previous == "coin_toss" ) {
+            var parent = document.getElementById("formCoinToss");
+            parent.removeChild( document.getElementById("parameterSpan") );
+            parent.removeChild( document.getElementById("id_submitButton") );
+        }
+
+        if ( previous == "n_digit_int" ) {
+            var parent = document.getElementById("formNDigitInt");
+            parent.removeChild( document.getElementById("parameterSpan") );
+            parent.removeChild( document.getElementById("id_submitButton") );
+        }
+
+        if ( previous == "fraction" ) {
+            var parent = document.getElementById("formFraction");
+            parent.removeChild( document.getElementById("parameterSpan") );
+            parent.removeChild( document.getElementById("id_submitButton") );
+        }
+
+        if ( previous == "n_digit_binary" ) {
+            var parent = document.getElementById("formNDigitBinary");
+            parent.removeChild( document.getElementById("parameterSpan") );
+            parent.removeChild( document.getElementById("id_submitButton") );
+        }
+
+        // remove this entire if else series and use generateParameterForm directly using the value in string e
         if ( e == "coin_toss" ) {
-            fetchCoinToss();
+            generateParameterForm(e, "generateCoinToss()");
         }
 
         else if ( e == "integer" ) {
             // fetchInteger();
-            generateParameterForm("Integer","generateInt()" )
+            generateParameterForm(e,"generateInt()" );
         }
 
         else if ( e == "float" ) {
-            fetchFloat();
+            generateParameterForm(e, "generateFloat()" );
         }
 
         else if ( e == "n_digit_int" ) {
-            fetchNDigitInt();
+            generateParameterForm(e, "generateNDigitInt()" );
         }
 
         else if ( e == "fraction" ) {
-            fetchFraction();
+            generateParameterForm(e, "generateFraction()" );
         }
 
         else if ( e == "n_digit_binary" ) {
-            fetchNDigitBinary();
+            generateParameterForm(e, "generateNDigitBinary()" );
         }
     
         previous = e;
@@ -53,10 +84,6 @@ function getOperation() {
 
 }
 
-
-function fetchCoinToss() {
-    return 1000;
-}
 
 function generateParameterForm(operation, functionPassed) {
     /*
@@ -69,7 +96,7 @@ function generateParameterForm(operation, functionPassed) {
 
     */
 
-    if ( operation == "Integer" || operation == "Float" ) {
+    if ( operation == "integer" || operation == "float" ) {
 
         // First we need to get the lower and upper bounds
         var r = document.createElement('span'); // root?
@@ -104,9 +131,10 @@ function generateParameterForm(operation, functionPassed) {
         r.appendChild(lower_limit);
         r.appendChild(upper_limit);
         r.appendChild(how_many);
-        r.setAttribute("id", "id_" + i); // redundant
+        // r.setAttribute("id", "id_" + i); // redundant
+        r.setAttribute("id", "parameterSpan");
 
-        if ( operation == "Integer" ) {
+        if ( operation == "integer" ) {
             document.getElementById("formInteger").appendChild(r);
         }
         else {
@@ -130,7 +158,7 @@ function generateParameterForm(operation, functionPassed) {
         r2.setAttribute("id", "id_submitButton");
 
         // increment()
-        if ( operation == "Integer" ) {
+        if ( operation == "integer" ) {
             document.getElementById("formInteger").appendChild(r2);
         }
         // Float
@@ -140,7 +168,7 @@ function generateParameterForm(operation, functionPassed) {
         
     }
 
-    else if ( operation == "Coin Toss" || operation == "Fraction" ) {
+    else if ( operation == "coin_toss" || operation == "fraction" ) {
         var r = document.createElement('span');
         var how_many = document.createElement('INPUT'); // how many
 
@@ -153,12 +181,17 @@ function generateParameterForm(operation, functionPassed) {
 
         increment();
     
-        r.appendChild(lower_limit);
-        r.appendChild(upper_limit);
         r.appendChild(how_many);
-        r.setAttribute("id", "id_" + i);
+        // r.setAttribute("id", "id_" + i);
+        r.setAttribute("id", "parameterSpan");
 
-        document.getElementById("mainform").appendChild(r); // change mainform
+        if ( operation == "coin_toss" ) {
+            document.getElementById("formCoinToss").appendChild(r); 
+        }
+        else {
+            document.getElementById("formFraction").appendChild(r); 
+        }
+        
 
         var r2 = document.createElement('span');
         // submit
@@ -174,14 +207,20 @@ function generateParameterForm(operation, functionPassed) {
         // increment()
         r2.setAttribute("id", "id_submitButton");
 
-        document.getElementById("mainform").appendChild(r2); // change mainform
+        if ( operation == "coin_toss" ) {
+            document.getElementById("formCoinToss").appendChild(r2); 
+        }
+        else {
+            document.getElementById("formFraction").appendChild(r2); 
+        }
+        
 
     }
 
-    else if ( operation == "N Digit Integer" || operation == "N Digit Binary" ) {
+    else if ( operation == "n_digit_int" || operation == "n_digit_binary" ) {
 
         // First we need to get the lower and upper bounds
-        var r = document.createElement('span'); // root?
+        var r = document.createElement('span');
         var n_value = document.createElement('INPUT'); // length of integer / binary
         var how_many = document.createElement('INPUT'); // How many random ints to create within the range
 
@@ -201,31 +240,39 @@ function generateParameterForm(operation, functionPassed) {
 
         increment();
     
-        r.appendChild(lower_limit);
-        r.appendChild(upper_limit);
+        r.appendChild(n_value);
         r.appendChild(how_many);
-        r.setAttribute("id", "id_" + i); // REDUNDANT!!!!!! Fix all instances of this
+        r.setAttribute("id", "parameterSpan");
 
-        document.getElementById("mainform").appendChild(r); // change mainform
+        if ( operation == "n_digit_int" ) {
+            document.getElementById("formNDigitInt").appendChild(r);
+        }
+        else {
+            document.getElementById("formNDigitBinary").appendChild(r);
+        }
+        
 
-        var r = document.createElement('span');
-        // submit
+        var r2 = document.createElement('span');
         var sub = document.createElement("INPUT");
         sub.setAttribute("type", "submit");
         
         increment();
         sub.setAttribute("name", "textelement_" + i);
-        sub.setAttribute("onsubmit", functionPassed);
+        sub.setAttribute("onsubmit", functionPassed); // redundant?
 
 
-        r.appendChild(sub);
+        r2.appendChild(sub);
 
         // increment()
-        r.setAttribute("id", "id_submitButton");
+        r2.setAttribute("id", "id_submitButton");
 
-        document.getElementById("mainform").appendChild(r); // change mainform
-        // change mainform
-        
+        if ( operation == "n_digit_int" ) {
+            document.getElementById("formNDigitInt").appendChild(r2); 
+        }
+        else {
+            document.getElementById("formNDigitBinary").appendChild(r2); 
+        }
+    
     }
 
     else {
@@ -235,22 +282,6 @@ function generateParameterForm(operation, functionPassed) {
 
 
 
-function fetchFloat() {
-    return 3000;
-}
-
-function fetchNDigitInt() {
-    return 4000;
-}
-
-function fetchFraction() {
-    return 5000;
-}
-
-function fetchNDigitBinary() {
-    return 6000;
-}
-
 
 // const form = document.getElementById('mainform');
 // form.onsubmit = displayNumber;
@@ -258,32 +289,20 @@ function fetchNDigitBinary() {
 const formInteger = document.getElementById("formInteger");
 formInteger.onsubmit = generateInt;
 
+const formFloat = document.getElementById("formFloat");
+formFloat.onsubmit = generateFloat;
 
+const formCoinToss = document.getElementById("formCoinToss");
+formCoinToss.onsubmit = generateCoinToss;
 
-// UPDATE: Delete this function displayName()
-// change function name to setNumber or something
-// Need this for integers and float generation
-function displayNumber(event) {
-    event.preventDefault();
+const formNDigitInt = document.getElementById("formNDigitInt");
+formNDigitInt.onsubmit = generateNDigitInt;
 
-    var ll = document.getElementById('lowerLimitField').value;
-    var ul = document.getElementById('upperLimitField').value;
-    var how_many = document.getElementById('howMany').value;
+const formFraction = document.getElementById("formFraction");
+formFraction.onsubmit = generateFraction;
 
-    ll = parseInt(ll);
-    ul = parseInt(ul);
-    how_many = parseInt(how_many);
-    
-    // Use AJAX to make a post request to python backend and fetch n random numbers
-    // Create field to accept n (number of numbers to generate in one single backend call)
-
-    generateInt(ll, ul, how_many);
-
-
-    // updateOutput(num);
-    // outputHere
-    // document.getElementById('outputHere').innerHTML = tmp;
-}
+const formNDigitBinary = document.getElementById("formNDigitBinary");
+formNDigitBinary.onsubmit = generateNDigitBinary;
 
 
 function generateInt(event) {
@@ -292,7 +311,7 @@ function generateInt(event) {
     the upper and lower limits
     */
 
-    event.preventDefault();
+    event.preventDefault(); // won't update the url / go to a new page on submit
 
     var ll = document.getElementById('lowerLimitField').value;
     var ul = document.getElementById('upperLimitField').value;
@@ -339,6 +358,220 @@ function generateInt(event) {
 }
 
 
+function generateFloat(event) {
+    /*
+    Sends a POST request (using AJAX) to the python backend and fetches a random integer between
+    the upper and lower limits
+    */
+
+    event.preventDefault();
+
+    var ll = document.getElementById('lowerLimitField').value;
+    var ul = document.getElementById('upperLimitField').value;
+    var how_many = document.getElementById('howMany').value;
+
+    ll = parseInt(ll);
+    ul = parseInt(ul);
+    how_many = parseInt(how_many);
+    
+    var xml = new XMLHttpRequest();
+
+    xml.open("POST", "/funcFloat", true);
+    // passing true to make the process asynchronous
+
+    xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xml.onload = function() {
+        // alert("REACHED");
+        // this is where we fetch the data from the back end
+        var dataReply = JSON.parse(this.responseText);
+        // console.log(dataReply);
+        // alert("RandInt: " + dataReply["numbers"]);
+        generatedNums = dataReply["numbers"];
+        updateOutput(generatedNums);
+    }; // endfunction
+
+
+    dataSend = {
+        "lowerLimit" : ll,
+        "upperLimit" : ul,
+        "howMany" : how_many
+        };
+        
+    // this is where we send the upper and lower limits
+
+    xml.send(JSON.stringify(dataSend)); // sends the JSON file as 1 single string
+}
+
+
+function generateCoinToss(event) {
+    /*
+    Sends a POST request (using AJAX) to the python backend and performs n coin tosses
+    */
+
+    event.preventDefault();
+
+    var how_many = document.getElementById('howMany').value;
+
+    how_many = parseInt(how_many);
+    
+
+    var xml = new XMLHttpRequest();
+
+    xml.open("POST", "/funcCoinToss", true);
+    // passing true to make the process asynchronous
+
+    xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xml.onload = function() {
+        
+        var dataReply = JSON.parse(this.responseText);
+        
+        generatedNums = dataReply["numbers"];
+        updateOutput(generatedNums);
+    }; // endfunction
+
+
+    dataSend = {
+        "howMany" : how_many
+        };
+        
+    // this is where we send the upper and lower limits
+
+
+    xml.send(JSON.stringify(dataSend)); // sends the JSON file as 1 single string
+}
+
+
+function generateNDigitInt(event) {
+    /*
+    Sends a POST request (using AJAX) to the python backend and fetches a random integer between
+    the upper and lower limits
+    */
+
+    event.preventDefault(); // won't update the url / go to a new page on submit
+
+    var n_value = document.getElementById('nValue').value;
+    var how_many = document.getElementById('howMany').value;
+
+    n_value = parseInt(n_value);
+    how_many = parseInt(how_many);
+    
+    var xml = new XMLHttpRequest();
+
+    xml.open("POST", "/funcNDigitInt", true);
+    // passing true to make the process asynchronous
+
+    xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xml.onload = function() {
+       
+        var dataReply = JSON.parse(this.responseText);
+        
+        generatedNums = dataReply["numbers"];
+        updateOutput(generatedNums);
+    }; // endfunction
+
+
+    dataSend = {
+        "nValue" : n_value,
+        "howMany" : how_many
+        };
+        
+    // this is where we send the upper and lower limits
+
+
+    xml.send(JSON.stringify(dataSend)); // sends the JSON file as 1 single string
+}
+
+
+function generateFraction(event) {
+    /*
+    Sends a POST request (using AJAX) to the python backend and fetches floats between 0 and 1
+    */
+
+    event.preventDefault(); // won't update the url / go to a new page on submit
+
+    var how_many = document.getElementById('howMany').value;
+
+    how_many = parseInt(how_many);
+    
+    // Use AJAX to make a post request to python backend and fetch n random numbers
+    // Create field to accept n (number of numbers to generate in one single backend call)
+
+    // generateInt(ll, ul, how_many);
+
+    var xml = new XMLHttpRequest();
+
+    // xml.open("POST", "{{url_for(func)}} ", true); // func is name of function that fetches integer
+    xml.open("POST", "/funcFraction", true);
+    // passing true to make the process asynchronous
+
+    xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xml.onload = function() {
+        
+        var dataReply = JSON.parse(this.responseText);
+        
+        generatedNums = dataReply["numbers"];
+        updateOutput(generatedNums);
+    }; // endfunction
+
+
+    dataSend = {
+        "howMany" : how_many
+        };
+        
+    // this is where we send the upper and lower limits
+
+
+    xml.send(JSON.stringify(dataSend)); // sends the JSON file as 1 single string
+}
+
+function generateNDigitBinary(event) {
+    /*
+    Sends a POST request (using AJAX) to the python backend and fetches a random integer between
+    the upper and lower limits
+    */
+
+    event.preventDefault(); // won't update the url / go to a new page on submit
+
+    var n_value = document.getElementById('nValue').value;
+    var how_many = document.getElementById('howMany').value;
+
+    n_value = parseInt(n_value);
+    how_many = parseInt(how_many);
+    
+    var xml = new XMLHttpRequest();
+
+    xml.open("POST", "/funcNDigitBinary", true);
+    // passing true to make the process asynchronous
+
+    xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xml.onload = function() {
+       
+        var dataReply = JSON.parse(this.responseText);
+        
+        generatedNums = dataReply["numbers"];
+        updateOutput(generatedNums);
+    }; // endfunction
+
+
+    dataSend = {
+        "nValue" : n_value,
+        "howMany" : how_many
+        };
+        
+    // this is where we send the upper and lower limits
+
+
+    xml.send(JSON.stringify(dataSend)); // sends the JSON file as 1 single string
+}
+
+
+
+
 
 function updateOutput(generatedNums) {
     /*
@@ -352,8 +585,6 @@ function updateOutput(generatedNums) {
         numbers.push(generatedNums[i]);
     }
     
-
-    // alert(numbers[numberOfNumbersGenerated-1]);
 
     var r = document.createElement('span');
 

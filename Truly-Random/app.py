@@ -145,7 +145,12 @@ def funcInteger():
     upperLimit = dataGet["upperLimit"]
     howMany    = dataGet["howMany"]
 
-    numbers = quantum_rng.rand_int(lowerLimit, upperLimit, howMany)
+    numbers = []
+
+    for i in range( howMany ):
+        num = quantum_rng.rand_int(lowerLimit, upperLimit)
+        numbers += [num]
+
     # num = 812389
 
     # Need to pass an array and account for n generations later (instead of just one number)
@@ -159,6 +164,142 @@ def funcInteger():
 
     return dataReply
 
+
+@app.route('/funcFloat', methods=['GET', 'POST'])
+def funcFloat():
+
+    dataGet = request.get_json(force=True)
+
+    # dataGet is now a python dict
+    lowerLimit = dataGet["lowerLimit"]
+    upperLimit = dataGet["upperLimit"]
+    howMany    = dataGet["howMany"]
+
+    # numbers = quantum_rng.rand_int(lowerLimit, upperLimit, howMany)
+    numbers = []
+
+    for i in range(howMany):
+        num = quantum_rng.rand_float(lowerLimit, upperLimit)
+        numbers += [num]
+    
+
+    # Need to pass an array and account for n generations later (instead of just one number)
+    dataReply = {"numbers": numbers }
+
+
+    dataReply = json.dumps(dataReply)
+
+
+
+    return dataReply
+
+
+@app.route('/funcCoinToss', methods=['GET', 'POST'])
+def funcCoinToss():
+
+    dataGet = request.get_json(force=True)
+    howMany = dataGet["howMany"]
+
+    # numbers = quantum_rng.rand_int(lowerLimit, upperLimit, howMany)
+    # numbers = quantum_rng.rand_float(lowerLimit, upperLimit, howMany)
+
+    numbers = []
+
+    for i in range(howMany):
+
+        num = quantum_rng.random_coin_toss()
+        numbers += [num]
+    
+
+    # Need to pass an array and account for n generations later (instead of just one number)
+    dataReply = {"numbers": numbers }
+
+
+    dataReply = json.dumps(dataReply)
+
+
+
+    return dataReply
+
+
+
+@app.route('/funcNDigitInt', methods=['GET', 'POST'])
+def funcNDigitInt():
+
+    dataGet = request.get_json(force=True)
+    nValue = dataGet["nValue"]
+    howMany = dataGet["howMany"]
+
+
+    numbers = []
+
+    for i in range(howMany):
+
+        num = quantum_rng.rand_n_digit(nValue)
+        numbers += [num]
+    
+
+    # Need to pass an array and account for n generations later (instead of just one number)
+    dataReply = {"numbers": numbers }
+
+
+    dataReply = json.dumps(dataReply)
+
+
+
+    return dataReply
+
+
+@app.route('/funcFraction', methods=['GET', 'POST'])
+def funcFraction():
+
+    dataGet = request.get_json(force=True)
+    howMany = dataGet["howMany"]
+
+    numbers = []
+
+    for i in range(howMany):
+
+        num = quantum_rng.rand()
+        numbers += [num]
+    
+
+    # Need to pass an array and account for n generations later (instead of just one number)
+    dataReply = {"numbers": numbers }
+
+
+    dataReply = json.dumps(dataReply)
+
+
+
+    return dataReply
+
+
+@app.route('/funcNDigitBinary', methods=['GET', 'POST'])
+def funcNDigitBinary():
+
+    dataGet = request.get_json(force=True)
+    nValue = dataGet["nValue"]
+    howMany = dataGet["howMany"]
+
+
+    numbers = []
+
+    for i in range(howMany):
+
+        num = quantum_rng.rand_n_digit_binary(nValue)
+        numbers += [num]
+    
+
+    # Need to pass an array and account for n generations later (instead of just one number)
+    dataReply = {"numbers": numbers }
+
+
+    dataReply = json.dumps(dataReply)
+
+
+
+    return dataReply
 
 
 
