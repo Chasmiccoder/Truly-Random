@@ -86,4 +86,5 @@ Add feature to set the number of numbers to generate
 
 Create a main.js and use that
 Handle all warnings
+Put restriction for text fields as integers / floats only (no alphabets)
 

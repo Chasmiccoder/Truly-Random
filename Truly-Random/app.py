@@ -131,30 +131,31 @@ path_templates = os.path.join(path_cwd, "templates")
 path_static = os.path.join(path_cwd, "static")
 """
 
-@app.route('/func', methods=['GET', 'POST'])
-def func():
+@app.route('/funcInteger', methods=['GET', 'POST'])
+def funcInteger():
     # print("REACEHDBOIII REACEHDBOIII\n REACEHDBOIII \nREACEHDBOIII")
 
     dataGet = request.get_json(force=True)
     # Try without force=True
 
-    print(dataGet) # looks good
+    # print(dataGet) # looks good
 
     # dataGet is now a python dict
     lowerLimit = dataGet["lowerLimit"]
     upperLimit = dataGet["upperLimit"]
+    howMany    = dataGet["howMany"]
 
-    # num = quantum_rng.rand_int(lowerLimit, upperLimit)
-    num = 812389
+    numbers = quantum_rng.rand_int(lowerLimit, upperLimit, howMany)
+    # num = 812389
 
     # Need to pass an array and account for n generations later (instead of just one number)
-    dataReply = {"numbers": num }
+    dataReply = {"numbers": numbers }
 
-    print("HERE", dataReply)
+    # print("HERE", dataReply)
 
     dataReply = json.dumps(dataReply)
 
-    print("HERE FINAL", dataReply)
+    # print("HERE FINAL", dataReply)
 
     return dataReply
 

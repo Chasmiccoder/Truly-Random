@@ -136,7 +136,7 @@ def rand_n_digit( n ):
     return random_number
 
 
-def rand_int( a,b, precision = 20 ):
+def rand_int( a,b, howMany = 1, precision = 20 ):
     """
     Returns a random integer value in the range of [a,b]
     precision = number of digits to be passed in rand()
@@ -147,9 +147,12 @@ def rand_int( a,b, precision = 20 ):
     a = int(a)
     b = int(b)
 
-    random_number = int( rand( precision ) * ( b - a ) ) + a
+    randomNums = []
+    for i in range(howMany):
+        num = int( rand( precision ) * ( b - a ) ) + a
+        randomNums += [num]
 
-    return random_number
+    return randomNums
 
 
 def rand_float( a,b, precision = 5 ):
