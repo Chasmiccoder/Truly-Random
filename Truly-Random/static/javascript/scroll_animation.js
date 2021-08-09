@@ -2,7 +2,6 @@
 
 function smoothScroll( target, duration ) {
     var target = document.querySelector(target);
-    // console.log(target);
 
     var targetPosition = target.getBoundingClientRect().top; 
     var startPosition = window.pageYOffset; // The coordinate of the top of what the user sees

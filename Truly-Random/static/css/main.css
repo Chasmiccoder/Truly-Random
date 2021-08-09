@@ -386,6 +386,17 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid snow;  /* creates padding around scroll thumb */
 }
 
+
+
+table, th, td {
+    border: 1px solid #616060;
+    border-collapse: collapse;
+    
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem;
+}
+
 #usage_output {
     background-color: #28282B;
     width: 40%;

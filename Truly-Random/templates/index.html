@@ -10,7 +10,42 @@
             <div id="tp_usage"></div>
             <p class="content_heading">Usage</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eum repudiandae cum adipisci tempore qui recusandae, odit vitae enim voluptate aut possimus culpa sapiente, quam autem fugit necessitatibus! Porro doloremque exercitationem reiciendis aliquam laboriosam illo veritatis voluptatum omnis commodi accusamus ex, cum deserunt quisquam, expedita dolorem quod asperiores, placeat temporibus.</p>
+            <p>
+                First select the type of random number you want to generate. <br>
+        
+                <table>
+                    <tr>
+                        <td>Coin Toss</td>
+                        <td>Simulates a 'Quantum Coin Toss', and gives either Tails (0) or Heads (1)</td>
+                    </tr>
+                    <tr>
+                        <td>Integer</td>
+                        <td>Generates integers between the specified lower and upper limits</td>
+                    </tr>
+                    <tr>
+                        <td>Float</td>
+                        <td>Generates floating point numbers between the specified lower and upper limits</td>
+                    </tr>
+                    <tr>
+                        <td>N Digit Integer</td>
+                        <td> Generates integers with N digits</td>
+                    </tr>
+                    <tr>
+                        <td>Fraction</td>
+                        <td>Generates a float between 0 and 1</td>
+                    </tr>
+                    <tr>
+                        <td>N Digit Binary</td>
+                        <td>Sometimes you just want a binary string of N digits xD</td>
+                    </tr>
+
+                </table>
+                
+                <br>
+
+                The parameter 'How Many' specifies the number of random numbers you want to produce in a single query. <br>
+                The parameter 'Precision' specifies the number of digits after the decimal place during generation of floating point numbers. <br>
+            </p>
 
             <br>
 
@@ -26,7 +61,6 @@
                     <option value="n_digit_binary">N Digit Binary</option>
                 </select>
                 <button onclick="getOperation()">Choose</button>
-
                 
             </div>
 
@@ -45,94 +79,21 @@
 
                 <form action="#" id="formNDigitBinary" method="get" name="mainform" class="formClass"></form>
             </div>
-
         </div>
 
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <br>
 
         <button id="clipboardCopy">Copy</button>
-        <button onclick="openRaw()">Raw</button>
         <div class="content" id="usage_output">
             
-            
         </div>
-
 
         <br>
         <br>
         <br>
 
     </section>
-
-    <!--
-    <section>
-
-        <div id="usage" class="content">
-            <div id="tp_usage"></div>
-            <p class="content_heading">Usage</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eum repudiandae cum adipisci tempore qui recusandae, odit vitae enim voluptate aut possimus culpa sapiente, quam autem fugit necessitatibus! Porro doloremque exercitationem reiciendis aliquam laboriosam illo veritatis voluptatum omnis commodi accusamus ex, cum deserunt quisquam, expedita dolorem quod asperiores, placeat temporibus.</p>
-
-            <br>
-
-        </div>
-
-        <div class="content">
-            <form action="/" method="POST">
-                {{ form.csrf_token }}
-                {{ form.opts }} 
-            
-                <ul>
-                    {% for error in form.opts.errors %}
-                    <li style="color:red;">
-                        {{ error }}
-                    </li>
-            
-                    {% endfor %}
-            
-                </ul>
-            
-                <input type="submit">
-                    
-            </form>
-        </div>
-        
-        <div id="usage_output" class="content">
-            
-
-            {% for num in numbers %}
-                <p>{{ num }}</p>
-            {% endfor %}
-
-        </div>
-
-    </section>
-    -->
-    <!-- <p>RNG:</p>  -->
 
 {% endblock %}
