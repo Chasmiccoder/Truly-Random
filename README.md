@@ -53,7 +53,7 @@ https://www.random.org/ (But uses Atmospheric Noise to generate random numbers)
 
 
 
-
+<!--
 To Do:
 https://www.youtube.com/watch?v=r-xe8XJqy7U
 Add media queries (end part of this vid) Also, Choose an Operation is not aligned properly
@@ -68,6 +68,5 @@ generated using the normal random library in python
 Make comparison with python's random library, and this Quantum RNG
 Use Chi Squared Test in Statistics to test for authenticity of our app
 Add Quantum Circuit to the explanation
-
-Hide flask db secret key (make a new one and hide)
 Document properly with a process diagram
+-->

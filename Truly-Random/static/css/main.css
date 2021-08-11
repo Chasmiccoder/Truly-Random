@@ -1,13 +1,10 @@
 html,body {
     height:100%;
     margin:0;
-
-    /* font-family:; Google Font */
     line-height: 180%;
-
     color: beige;
-
     background-color: #1f1d1d;
+    width: auto;
 }
 
 #home_icon {
@@ -23,15 +20,10 @@ ion-icon {
 }
 
 .img1 {
-    /* golden quantum one (first) */
+    
     background: url( ../fractal_bg.jpg); 
     
-    /* Work on this later */
-    background-position: -15rem -8rem;
-
-    /* background: url(../abstract-quantum.jpg);
-    background: url(../abstract-4902607_1280.jpg); */
-
+    background-position: -1rem -8rem;
     min-height: 100%;
 }
 
@@ -42,18 +34,13 @@ ion-icon {
     list-style: none;
     box-sizing: border-box;
     font-family: montserrat; 
-    /* Change this later */
-
     overflow: hidden;
     position: fixed;
     top:0;
     z-index: 1;
-
     border-bottom: 1px solid beige;
-
     background: url(../fractal-flame.jpg);
     background-position: 0rem 20rem;
-
     height: 80px;
     width: 100%;
 }
@@ -62,7 +49,6 @@ ion-icon {
     color: white;
     font-size: 1.2rem;
     line-height: 60px;
-    /* padding-right:4rem; */
     font-weight: bold;
     float: left;
     padding-left: 1rem;
@@ -83,7 +69,6 @@ ion-icon {
 
 #nav_ul {
     float: right;
-    /* margin-right: 20px; */
 }
 
 #nav_ul li {
@@ -95,7 +80,6 @@ ion-icon {
 #nav_ul li a {
     color: beige;
     font-size: 17px;
-
     padding: 7px 13px;
     border-radius: 3px;
     text-decoration: none;
@@ -111,81 +95,15 @@ ion-icon {
     font-size: 30px;
     color: beige;
     float: right;
-    
     margin-right: 2rem;
     margin-top:0.8rem;
     cursor: pointer;
     display: none;
 }
 
+
 #check {
     display: none;
-}
-
-/* If screen width is smaller, but not small enough for dropdown */
-@media ( max-width: 952px ) {
-    label#check {
-        font-size: 30px;
-        padding-left: 50px;
-    }
-
-    #nav_ul li a {
-        font-size: 16px;
-
-    }
-}
-
-/* Change media queries values depending on final project  */
-@media ( max-width: 858px ) {
-    #checkbtn {
-        display: block;
-    }
-
-    #nav_ul {
-        position: fixed;
-        width: 100%;
-        /* height: 100vh; */
-        height: 18rem;
-        background: #2c3e50;
-        border: 1px solid beige;
-        padding-left: 0rem;
-
-        top: 60px;
-        left: -115%;
-        text-align: center;
-
-        transition: all 0.5s;
-
-    }
-
-    #nav_ul li {
-        display: block;
-        margin: 20px 0;
-        line-height: 30px;
-    }
-
-    #nav_ul li a {
-        font-size: 20px;
-
-    }
-
-    #nav_ul a:hover {
-        background: none;
-        color: #0082e6;
-        
-    }
-
-    #check:checked ~ ul {
-        left: 0;
-    }
-
-    .img1 {
-        background: url( ../fractal_bg.jpg);
-        min-height: 100%;
-        background-position: -45rem;
-    }
-
-
 }
 
 #heading {
@@ -213,7 +131,7 @@ ion-icon {
     /* font-weight: bold; */
     /* font-style: italic; */
     /* text-decoration: underline; */
-    text-decoration-thickness: 1px;
+    /* text-decoration-thickness: 10px; */
     font-family: 'Dancing Script', cursive;
     font-size: 4.5em;
     margin-bottom: 0;
@@ -229,10 +147,8 @@ ion-icon {
 .img2 {
     background: url( ../fractal-flame.jpg);
     min-height: 50%;
-
     background-position: center;
     background-size: cover;
-    
 }
 
 .content {
@@ -266,9 +182,6 @@ ion-icon {
     padding: 4rem;
     padding-top: 0;
     padding-bottom: 0;  
-
-    /* background-color: rgba(121,115,92); */
-
     background: rgb(121,115,92);
     background: linear-gradient(90deg, rgba(121,115,92,1) 50%, rgba(0,0,0,1) 115%);
 
@@ -351,7 +264,9 @@ ion-icon {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    width: 9rem;
+    /* width: 9rem; */ /*Recent change*/
+    
+
 }
   
 
@@ -399,7 +314,7 @@ table, th, td {
 
 #usage_output {
     background-color: #28282B;
-    width: 40%;
+    /* width: 40%; */ /* recent change */
     height: 150px;
     display: flex; 
     flex-direction: column;
@@ -437,7 +352,7 @@ table, th, td {
 /* Dynamic Form Stuff */
 
 form {
-    width:330px;
+    width:330px; /* recent change */
     border-top:1px dotted #D9D9D9;
     margin:10px 180px
 }
@@ -489,10 +404,90 @@ textarea {
     color: beige;
     text-align:center;
 }
-    .three{
-    text-align:center;
-    width:660px;
+
+.three{
+    /* text-align:center; */
+    /* width:660px; */
+    /* width: 0.005rem; */
     border-left:1px solid #D0D0D0;
-    float:left;
+    /* float:left; */
     /* background-color:#fff */
 }
+
+.three form {
+    width:auto;
+}
+/* work on widths of input fields */
+
+/* Responsive */
+/* If screen width is smaller, but not small enough for dropdown */
+@media ( max-width: 952px ) {
+    label#check {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    #nav_ul li a {
+        font-size: 16px;
+
+    }
+}
+
+/* Change media queries values depending on final project  */
+@media ( max-width: 858px ) {
+    .content {
+        font-size: 2rem;
+    }
+
+    #checkbtn {
+        display: block;
+    }
+
+    #nav_ul {
+        position: fixed;
+        /* width: 100%; */
+        width: auto; /* recent change */
+        /* height: 100vh; */
+        height: 18rem;
+        background: #2c3e50;
+        border: 1px solid beige;
+        padding-left: 0rem;
+
+        top: 60px;
+        left: -115%;
+        text-align: center;
+
+        transition: all 0.5s;
+
+    }
+
+    #nav_ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+
+    #nav_ul li a {
+        font-size: 20px;
+
+    }
+
+    #nav_ul a:hover {
+        background: none;
+        color: #0082e6;
+        
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    .img1 {
+        background: url( ../fractal_bg.jpg);
+        min-height: 100%;
+        background-position: -45rem;
+    }
+
+
+}
+
