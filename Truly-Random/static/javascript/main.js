@@ -106,6 +106,7 @@ function generateParameterForm(operation) {
         var submit = document.createElement("INPUT");
         submit.setAttribute("type", "submit");
         
+        
         increment();
 
         lower_limit.setAttribute("type", "number");
@@ -127,6 +128,11 @@ function generateParameterForm(operation) {
         how_many.setAttribute("name", "textelement_" + i);
         how_many.setAttribute("id", "howMany");
 
+        submit.style.setProperty("margin", "10px");
+        lower_limit.style.setProperty("margin", "10px");
+        upper_limit.style.setProperty("margin", "10px");
+        how_many.style.setProperty("margin", "10px");
+
         r.appendChild(lower_limit);
         r.appendChild(upper_limit);
         r.appendChild(how_many);
@@ -141,6 +147,9 @@ function generateParameterForm(operation) {
             precision.setAttribute("placeholder", "Precision"); 
             precision.setAttribute("name", "textelement_" + i);
             precision.setAttribute("id", "precisionField");
+
+            precision.style.setProperty("margin", "10px");
+
             r.appendChild(precision);
         }
 
@@ -169,6 +178,9 @@ function generateParameterForm(operation) {
         how_many.setAttribute("id", "howMany");
 
         increment();
+
+        submit.style.setProperty("margin", "10px");
+        how_many.style.setProperty("margin", "10px");
     
         r.appendChild(how_many);
 
@@ -182,6 +194,8 @@ function generateParameterForm(operation) {
             precision.setAttribute("placeholder", "Precision"); 
             precision.setAttribute("name", "textelement_" + i);
             precision.setAttribute("id", "precisionField");
+            precision.style.setProperty("margin", "10px");
+
             r.appendChild(precision);
         }
 
@@ -221,6 +235,10 @@ function generateParameterForm(operation) {
         how_many.setAttribute("id", "howMany");
 
         increment();
+
+        submit.style.setProperty("margin", "10px");
+        n_value.style.setProperty("margin", "10px");
+        how_many.style.setProperty("margin", "10px");
     
         r.appendChild(n_value);
         r.appendChild(how_many);

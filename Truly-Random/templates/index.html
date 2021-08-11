@@ -13,7 +13,7 @@
             <p>
                 First select the type of random number you want to generate. <br>
         
-                <table>
+                <table id="functionTable">
                     <tr>
                         <td>Coin Toss</td>
                         <td>Simulates a 'Quantum Coin Toss', and gives either Tails (0) or Heads (1)</td>
@@ -49,9 +49,11 @@
 
             <br>
 
+            <h4 id="chooseHeading">Choose the type of Random Number you want to generate</h4>
+
             <!-- Choose Operation -->
             <div class="two">
-                <h4>Choose the type of Random Number you want to generate</h4>
+                
                 <select name="operation" id="operation_select">
                     <option value="coin_toss">Coin Toss</option>
                     <option value="integer">Integer</option>
@@ -60,17 +62,22 @@
                     <option value="fraction">Fraction</option>
                     <option value="n_digit_binary">N Digit Binary</option>
                 </select>
-                <button onclick="getOperation()">Choose</button>
+                <button onclick="getOperation()" id="chooseOperationButton">Choose</button>
                 
             </div>
 
             <!-- Final Form to gather data about type of Random number, range, etc. -->
             <!-- Remove class three later and replace instances with formWrapper -->
 
-            <div class="three formWrapper"> 
-                <h2 id="enter-values-tag"></h2>
+            <br>
+            
 
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="three formWrapper"> 
+                <!-- <br><br><br> -->
+                <h2 id="enter-values-tag"></h2> 
+
+
+                <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
 
                 <form action="#" id="formInteger" method="get" name="mainform" class="formClass"></form>
 
