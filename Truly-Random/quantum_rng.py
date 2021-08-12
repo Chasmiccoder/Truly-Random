@@ -1,16 +1,3 @@
-"""
-Usage of this module:
-=====================
-
-
-
-
-
-
-
-"""
-
-
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute, Aer
 import math
 
@@ -59,6 +46,7 @@ def random_coin_toss():
     qc = QuantumCircuit(q,c)
 
     qc.h( q[0] )
+    
     qc.measure( q,c )
 
     backend = Aer.get_backend("qasm_simulator")
@@ -150,10 +138,7 @@ def rand_int( a,b, precision = 20 ):
     a = int(a)
     b = int(b)
 
-    
     num = int( rand( precision ) * ( b - a ) ) + a
-        
-
     return num
 
 
@@ -171,5 +156,4 @@ def rand_float( a,b, precision = 5 ):
     if ( num > b ):
         num -= 1
         
-
     return num

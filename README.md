@@ -1,18 +1,26 @@
 # Truly-Random
-Generate true Random Numbers using the Hadamard  Quantum Gate
+Generate true Random Numbers using the Hadamard Quantum Gate
 
 
-====================
 
-## Work in Progress!
-
-====================
 
 <br>
 <br>
 <br>
+
+
+
+
+
+
+
+
+
 
 ### Resources
+
+<a href="https://qiskit.org/documentation/index.html">Qiskit Documentation</a>
+<br><br>
 
 Background Images by <br>
 <a href="https://pixabay.com/users/insspirito-1851261/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1280081">Garik Barseghyan (insspirito)</a>
@@ -24,49 +32,19 @@ Background Images by <br>
 <a href="https://pixabay.com/users/lumina_obscura-4128746/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3608029">Lumina Obscura</a>
 <br>
 <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=74005">Deutsch</a>
+<br>
 
 
-<!-- 
-Other Resources:
-http://www.gizma.com/easing/
-https://www.youtube.com/watch?v=oUSvlrDTLi4
-
- -->
-
-
-
-
-
- 
 
 Make note of all the requirements and project components (For example python version, flask version, etc)
 
-If the server is not updating, perform hard refresh (ctrl + shift + r)
-
-Resources
-https://qiskit.org/documentation/index.html
-
-
-Other similar projects:
-https://www.random.org/ (But uses Atmospheric Noise to generate random numbers)
-
-
-
 
 <!--
-To Do:
-https://www.youtube.com/watch?v=r-xe8XJqy7U
-Add media queries (end part of this vid) Also, Choose an Operation is not aligned properly
-Reconfirm image credits, pixabay
-
 Remove link to Ion Icon and make the entire project independent of external scripts (Ion Icon not working) + Handle 
 all warnings
 
-Fix navbar tp
 create a statistics.html page to compare the quantum random numbers with the numbers
 generated using the normal random library in python
 Make comparison with python's random library, and this Quantum RNG
 Use Chi Squared Test in Statistics to test for authenticity of our app
-Add Quantum Circuit to the explanation
-Document properly with a process diagram
 -->

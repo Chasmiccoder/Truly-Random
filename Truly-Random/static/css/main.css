@@ -20,9 +20,7 @@ ion-icon {
 }
 
 .img1 {
-    
-    background: url( ../fractal_bg.jpg); 
-    
+    background: url( ../fractal_bg.jpg);     
     background-position: -1rem -8rem;
     min-height: 100%;
 }
@@ -46,7 +44,6 @@ ion-icon {
 }
 
 .portfolio_link {
-    color: white;
     font-size: 1.2rem;
     line-height: 60px;
     font-weight: bold;
@@ -59,6 +56,7 @@ ion-icon {
     color: beige;
     text-shadow: 2px 1px black;
 }
+
 
 .portfolio_link:hover{
     transition: 0.5s;
@@ -112,13 +110,9 @@ ion-icon {
     align-items: center;
     flex-direction: column;
 
-    /* font-family: 'Tangerine', cursive; */
-    /* background: url(../fourthHeadingDesign.png) no-repeat scroll center top transparent; */
-
     background-size: 56%;
     background-repeat: no-repeat;
     background-position: 16.5rem 8rem;
-
     text-shadow: 3px 3px #000000;
                             
     padding: 4rem;
@@ -128,10 +122,6 @@ ion-icon {
 
 #main_heading {
     color:beige;
-    /* font-weight: bold; */
-    /* font-style: italic; */
-    /* text-decoration: underline; */
-    /* text-decoration-thickness: 10px; */
     font-family: 'Dancing Script', cursive;
     font-size: 4.5em;
     margin-bottom: 0;
@@ -154,7 +144,6 @@ ion-icon {
 .content {
     margin-left: 2rem;
     margin-right: 2rem;
-    /* display: flex; */
     text-align: center;
     margin-bottom: 3rem;
     font-family: 'Quicksand', sans-serif;
@@ -164,75 +153,38 @@ ion-icon {
 .content_heading {
     font-family: 'Tangerine', cursive;
     font-size: 4rem;
-
-
-}
-
-
-/* Delete this later, not really needed */
-#description {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    text-shadow: 1px 1px #000000;
-    margin: 5rem;     
-
-    padding: 4rem;
-    padding-top: 0;
-    padding-bottom: 0;  
-    background: rgb(121,115,92);
-    background: linear-gradient(90deg, rgba(121,115,92,1) 50%, rgba(0,0,0,1) 115%);
-
-
-    color: beige;
-    font-size: 1.5em;
-
-    padding: 0.75rem;
-    border: 2px;
-    border-style:groove;
-    border-color: goldenrod;
-    border-color:khaki;
 }
 
 #chooseOperationButton {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
-    /* padding: 15px 32px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    /* font-size: 16px; */
     border-radius: 20px;
 }
 
 #operation_select {
-    /* background-color: #4CAF50;  */
     background-color:cadetblue;
     border: none;
     color: white;
     height: 1.5rem;
     width: 10rem;
-    /* padding: 15px 32px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
     border-radius: 5px;
-
 }
 
 #clipboardCopy {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
-    /* padding: 15px 32px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    /* font-size: 16px; */
     border-radius: 20px;
     width: 5rem;
 }
@@ -250,24 +202,17 @@ ion-icon {
 
 }
 
-
 .img5 {
     background: url( ../milky-way.jpg);
     background-position: center bottom;
     min-height: 50%;
-
 }
 
 .img4 {
-    /* background: url( ../mathematics-bg.jpg); */
     background: url( ../physics.jpg);
     background-position: center center;
     min-height: 50%;
-
 }
-
-
-
 
 #function_selection {
     position: relative;
@@ -284,41 +229,6 @@ ion-icon {
     border: none;
 }
 
-
-/* min-width: 160px; */
-/* width: 200px; */
-/* Make the dropdown menu scrollable */
-/* .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    
-    min-width: 10rem;
-    
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    
-    height: 15rem;
-    overflow: auto;
-} */
-
-/* width: 9rem; */ /*Recent change*/
-/*
-.dropdown-content button {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-*/  
-
-
-/*
-.dropdown-content button:hover {
-    background-color: #ddd;    
-}
-*/
-
 #function_selection:hover .dropdown-content {
     display: block; 
 }
@@ -333,16 +243,13 @@ body::-webkit-scrollbar {
   
 body::-webkit-scrollbar-track {
     background: #343434;        /* color of the tracking area */
-    
 }
-  
+
 body::-webkit-scrollbar-thumb {
     background-color: #343434;    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 1px solid snow;  /* creates padding around scroll thumb */
 }
-
-
 
 table, th, td {
     border: 1px solid #616060;
@@ -356,7 +263,6 @@ table, th, td {
 
 #usage_output {
     background-color: #28282B;
-    /* width: 40%; */ /* recent change */
     height: 150px;
     display: flex; 
     flex-direction: column;
@@ -370,33 +276,16 @@ table, th, td {
     border: 2px solid pink;
     border-radius: 20px;
     border-style: inset;
-
-    /* justify-content: center; */
-    /* align-content: center; */
-    
-    /* margin: 10rem; */
-    /* flex-direction: column;
-    justify-content: center; */
-
 }
-
-
-
 
 .img1, .img2, .img3, .img4, .img5, .img6 {
     position: relative;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;    
 }
 
-
-/* Dynamic Form Stuff */
-
 form {
-    /* width:330px; recent change */
     border-top:1px dotted #D9D9D9;
-    /* margin:10px 180px */
 }
 
 button {
@@ -421,66 +310,38 @@ input[type = submit] {
     background-color:#4C4C4C;
     border-radius:5px;
     border:2px solid #616060;
-    /* color:#fff */
     color: beige;
 }
 
-/* textarea {
-    width:280px;
-    height:70px;
-    padding:5px;
-    margin:20px 0 10px;
-    border-radius:5px;
-    border:4px solid #acbfa5;
-} */
-
-.two {
-    /* background-color:#fff; */
-    /* width:290px; */
-    /* float:left; */
-    /* height:600px; */
+.selectOperation {
     margin-left: auto;
     margin-right: auto;
 }
 
-/*
-.two h4 {
-    color: beige;
-    text-align:center;
-}
-*/
-
-
-
-.three{
-    /* text-align:center; */
-    /* width:660px; */
-    /* width: 0.005rem; */
+.formWrapper{
     border:1px solid #D0D0D0;
-    /* float:left; */
-    /* background-color:#fff */
 }
 
-
-
-.three form {
+.formWrapper form {
     width:auto;
 }
 
-.three input {
+.formWrapper input {
     width: auto;
     
 }
-/* work on widths of input fields */
 
 #enter-values-tag {
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    /* justify-content: center; */
     font-size: large;
+}
+
+#thanks a {
+    color: beige;
+}
+#thanks a:hover{
+    transition: 0.5s;
+    background: lightcyan;
+    color: black;
 }
 
 
@@ -495,11 +356,9 @@ input[type = submit] {
 
     #nav_ul li a {
         font-size: 16px;
-
     }
 }
 
-/* Change media queries values depending on final project  */
 @media ( max-width: 858px ) {
     .content {
         font-size: 2rem;
@@ -511,9 +370,6 @@ input[type = submit] {
 
     #nav_ul {
         position: fixed;
-        /* width: 100%; */
-        /* width: auto; recent change */
-        /* height: 100vh; */
         height: 18rem;
         background: #2c3e50;
         border: 1px solid beige;
@@ -530,22 +386,16 @@ input[type = submit] {
     #nav_ul li {
         display: block;
         margin: 20px 0;
-        line-height: 30px;
-        /* width: 320px; */
-        /* width: auto; */
-        /* width: auto; */
-        
+        line-height: 30px;    
     }
 
     #nav_ul li a {
         font-size: 20px;
-
     }
 
     #nav_ul a:hover {
         background: none;
-        color: #0082e6;
-        
+        color: #0082e6;   
     }
 
     #check:checked ~ ul {
@@ -557,7 +407,4 @@ input[type = submit] {
         min-height: 100%;
         background-position: -45rem;
     }
-
-
 }
-

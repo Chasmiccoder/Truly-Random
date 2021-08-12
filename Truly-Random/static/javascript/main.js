@@ -444,7 +444,6 @@ function updateOutput(generatedNums) {
     Takes an array of integers and adds them to the output field
     */
     
-
     // Everytime the output gets updated, we need to refresh the text in the copy button
     document.getElementById('clipboardCopy').innerHTML = "Copy";
 
