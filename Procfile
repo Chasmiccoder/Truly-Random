@@ -1,1 +1,1 @@
-web: gunicorn Truly-Random\app:app
+web: gunicorn Truly-Random/app:app
