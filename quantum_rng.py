@@ -56,7 +56,7 @@ def random_coin_toss():
 
     # counts is {'1': 1} or {'0': 1}
     counts = sim_result.get_counts( qc )
-     
+    
     # At this point, we have simulated a perfectly random coin toss
     toss_outcome = int( list(counts.keys())[0] )
 
